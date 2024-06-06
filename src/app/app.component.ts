@@ -5,11 +5,12 @@ import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component
 import { ButtonComponent } from './components/button/button.component.js';
 import { FooterComponent } from './components/footer/footer.component.js';
 import { CardCarpoolHistoricComponent } from './components/card-carpool-historic/card-carpool-historic.component.js';
+import { CardAnnonceCovoitComponent } from './components/card-annonce-covoit/card-annonce-covoit.component.js';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent],
+  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
