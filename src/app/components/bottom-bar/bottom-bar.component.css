@@ -1,0 +1,16 @@
+.bottom-bar li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom-bar svg {
+  font-size: 30px;
+}
+
+/* Pour les très petits écrans */
+@media screen and (max-width: 362px) {
+  .bottom-bar a {
+    font-size: 14px;
+  }
+}
