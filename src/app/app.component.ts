@@ -9,11 +9,13 @@ import { NavbarComponent } from './components/navbar/navbar.component.js';
 import { CardAnnonceCovoitComponent } from './components/cards/card-annonce-covoit/card-annonce-covoit.component.js';
 import { CarCardComponent } from './components/cards/car-card/car-card.component.js';
 import { CardReservationComponent } from './components/cards/card-reservation/card-reservation.component.js';
+import { NumberPageComponent } from './components/number-page/number-page.component.js';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent],
+  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent, NumberPageComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

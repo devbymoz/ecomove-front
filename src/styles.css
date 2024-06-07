@@ -60,3 +60,38 @@ h3 {
     @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
   }
 }
+
+/* styles généraux */
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.btn-outline {
+  border: 1px solid #ccc;
+  background-color: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #eee;
+}
+
+/* pagination */
+.pagination-item {
+  @apply flex items-center justify-center border border-gray-300 h-8 w-8 rounded-lg cursor-pointer transition-transform transform;
+}
+
+.pagination-item:hover {
+  @apply bg-gray-100;
+}
+
+.pagination-item.active {
+  @apply bg-app-secondary text-white scale-125;
+}
