@@ -8,15 +8,15 @@ import { CardCarpoolHistoricComponent } from './components/cards/card-carpool-hi
 import { CardAnnonceCovoitComponent } from './components/card-annonce-covoit/card-annonce-covoit.component.js';
 import { CarCardComponent } from './components/car-card/car-card.component.js';
 import { CardReservationComponent } from './components/card-reservation/card-reservation.component.js';
+import { NavbarComponent } from './components/navbar/navbar.component.js';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent],
+  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'ecomoveFront';
-  
 }
