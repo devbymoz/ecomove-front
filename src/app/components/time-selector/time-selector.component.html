@@ -1,0 +1,14 @@
+<div class="flex space-x-4">
+    <div class="w-1/2">
+      <label for="start-time" class="block text-lg font-medium text-gray-700 ">Heure de départ</label>
+      <select id="start-time" class="mt-1 block w-full pl-3 pr-10 py-2 text-base shadow-lg border border-app-border focus:outline-none focus:ring-app-secondary focus:border-app-secondary sm:text-sm rounded-md">
+        <option *ngFor="let time of times" [value]="time">{{ time }}</option>
+      </select>
+    </div>
+    <div class="w-1/2">
+      <label for="end-time" class="block text-lg font-medium text-gray-700">Heure d'arrivée</label>
+      <select id="end-time" class="mt-1 block w-full pl-3 pr-10 py-2 text-base shadow-lg border border-app-border focus:outline-none focus:ring-app-secondary focus:border-app-secondary sm:text-sm rounded-md">
+        <option *ngFor="let time of times" [value]="time">{{ time }}</option>
+      </select>
+    </div>
+  </div>
