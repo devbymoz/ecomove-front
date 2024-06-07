@@ -10,12 +10,13 @@ import { CardAnnonceCovoitComponent } from './components/cards/card-annonce-covo
 import { CarCardComponent } from './components/cards/car-card/car-card.component.js';
 import { CardReservationComponent } from './components/cards/card-reservation/card-reservation.component.js';
 import { NumberPageComponent } from './components/number-page/number-page.component.js';
+import { TimeSelectorComponent } from './components/time-selector/time-selector.component.js';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent, NumberPageComponent],
+  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent, NumberPageComponent, TimeSelectorComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
