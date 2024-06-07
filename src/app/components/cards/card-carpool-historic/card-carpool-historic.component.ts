@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CardBottomComponent } from '../../card-bottom/card-bottom.component.js';
+import { CardBottomComponent } from '../card-bottom/card-bottom.component.js';
 import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
