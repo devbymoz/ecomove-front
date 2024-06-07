@@ -8,11 +8,12 @@ import { CardCarpoolHistoricComponent } from './components/cards/card-carpool-hi
 import { CardAnnonceCovoitComponent } from './components/cards/card-annonce-covoit/card-annonce-covoit.component.js';
 import { CarCardComponent } from './components/cards/car-card/car-card.component.js';
 import { CardReservationComponent } from './components/cards/card-reservation/card-reservation.component.js';
+import { CarpoolCardDetailsComponent } from './components/cards/carpool-card-details/carpool-card-details.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent],
+  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, CarpoolCardDetailsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
