@@ -8,8 +8,6 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [HeaderBaseComponent, ButtonComponent, NgClass],
   templateUrl: './nav-colab.component.html',
-  styleUrl: './nav-colab.component.css'
+  styleUrl: './nav-colab.component.css',
 })
-export class NavColabComponent {
-
-}
+export class NavColabComponent {}

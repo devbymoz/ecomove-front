@@ -15,19 +15,39 @@ import { TimeSelectorComponent } from './components/time-selector/time-selector.
 import { CardUserRentalComponent } from './components/cards/card-user-rental/card-user-rental.component.js';
 import { ModalBaseComponent } from './components/modals/modal-base/modal-base.component.js';
 import { ModalCancelCarpoolComponent } from './components/modals/modal-cancel-carpool/modal-cancel-carpool.component.js';
+import { LoginPageComponent } from './pages/login-page/login-page.component.js';
 import { HeaderBaseComponent } from './components/header-base/header-base.component.js';
 import { NavColabComponent } from './components/navs/nav-colab/nav-colab.component.js';
-import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.component.js';
-
+import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NumberPageComponent, TimeSelectorComponent, CardListRentalVehicleComponent, CarpoolCardDetailsComponent, CardUserRentalComponent, ModalBaseComponent, ModalCancelCarpoolComponent, HeaderBaseComponent, NavColabComponent, NavAdminComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  imports: [
+    RouterOutlet,
+    AlertComponent,
+    BottomBarComponent,
+    ButtonComponent,
+    FooterComponent,
+    CardCarpoolHistoricComponent,
+    CardAnnonceCovoitComponent,
+    CarCardComponent,
+    CardReservationComponent,
+    NumberPageComponent,
+    TimeSelectorComponent,
+    CardListRentalVehicleComponent,
+    CarpoolCardDetailsComponent,
+    CardUserRentalComponent,
+    ModalBaseComponent,
+    ModalCancelCarpoolComponent,
+    HeaderBaseComponent,
+    NavColabComponent,
+    LoginPageComponent,
+    NavAdminComponent,
+  ],
 })
 export class AppComponent {
   title = 'ecomoveFront';
-
 }
