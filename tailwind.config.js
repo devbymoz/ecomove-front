@@ -13,6 +13,9 @@ module.exports = {
         'app-alert': '#FFC107',
         'app-danger': '#E53935',
         'app-text-light': '#9B9B9B'
+      },
+      fontFamily: {
+        'app-font-principal': ['Poppins']
       }
     },
   },

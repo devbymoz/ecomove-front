@@ -9,5 +9,5 @@ import { CardBottomComponent } from '../card-bottom/card-bottom.component.js';
   styleUrl: './card-annonce-covoit.component.css'
 })
 export class CardAnnonceCovoitComponent {
-
+ 
 }

@@ -12,6 +12,8 @@ import { CarpoolCardDetailsComponent } from './components/cards/carpool-card-det
 import { CardListRentalVehicleComponent } from './components/cards/card-list-rental-vehicle/card-list-rental-vehicle.component.js';
 import { NumberPageComponent } from './components/number-page/number-page.component.js';
 import { TimeSelectorComponent } from './components/time-selector/time-selector.component.js';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // Import correct
+import { CalendarComponent } from './components/calendar/calendar.component.js';
 import { CardUserRentalComponent } from './components/cards/card-user-rental/card-user-rental.component.js';
 import { ModalBaseComponent } from './components/modals/modal-base/modal-base.component.js';
 import { ModalCancelCarpoolComponent } from './components/modals/modal-cancel-carpool/modal-cancel-carpool.component.js';
@@ -46,6 +48,8 @@ import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.compone
     NavColabComponent,
     LoginPageComponent,
     NavAdminComponent,
+    MatSlideToggleModule, 
+    CalendarComponent
   ],
 })
 export class AppComponent {
