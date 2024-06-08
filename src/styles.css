@@ -59,6 +59,9 @@ h3 {
   .btn-primary {
     @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
   }
+  .box-card {
+    @apply rounded-lg border border-app-border mb-5 shadow-card max-w-[385px];
+  }
 }
 
 /* styles généraux */

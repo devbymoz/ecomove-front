@@ -1,9 +1,19 @@
-<section class="text-app-text-light flex justify-evenly">
+<section class="text-app-text-light flex justify-between items-center" [ngClass]="'p-2'">
+  <div class="flex gap-x-2 items-center">
     <img src="/icons/timer.svg" alt="Icon" class="w-5 h-5" />
     <small>8h20</small>
-    <div class="h-5 w-[1px] bg-app-text-light"></div>
+  </div>
+
+  <div class="h-3 w-[1px] bg-app-text-light"></div>
+
+  <div class="flex gap-x-1 items-center">
     <small>3 places restantes</small>
-    <div class="h-5 w-[1px] bg-app-text-light"></div>
-    <img src="/icons/Co2.svg" alt="Icon" class="w-4 h-4 mr-1" />
+  </div>
+
+  <div class="h-3 w-[1px] bg-app-text-light"></div>
+
+  <div class="flex gap-x-1 items-center">
+    <img src="/icons/co2.svg" alt="Icon" class="w-4 h-4 mr-1" />
     <small>0.30kg CO2</small>
-  </section>
+  </div>
+</section>
