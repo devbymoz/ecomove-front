@@ -16,16 +16,34 @@ import { TimeSelectorComponent } from './components/time-selector/time-selector.
 import { CardUserRentalComponent } from './components/cards/card-user-rental/card-user-rental.component.js';
 import { ModalBaseComponent } from './components/modals/modal-base/modal-base.component.js';
 import { ModalCancelCarpoolComponent } from './components/modals/modal-cancel-carpool/modal-cancel-carpool.component.js';
-
+import { LoginPageComponent } from './pages/login-page/login-page.component.js';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent, NumberPageComponent, TimeSelectorComponent, CardListRentalVehicleComponent, CarpoolCardDetailsComponent, CardUserRentalComponent, ModalBaseComponent, ModalCancelCarpoolComponent],
+  imports: [
+    RouterOutlet,
+    AlertComponent,
+    BottomBarComponent,
+    ButtonComponent,
+    FooterComponent,
+    CardCarpoolHistoricComponent,
+    CardAnnonceCovoitComponent,
+    CarCardComponent,
+    CardReservationComponent,
+    NavbarComponent,
+    NumberPageComponent,
+    TimeSelectorComponent,
+    CardListRentalVehicleComponent,
+    CarpoolCardDetailsComponent,
+    CardUserRentalComponent,
+    ModalBaseComponent,
+    ModalCancelCarpoolComponent,
+    LoginPageComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'ecomoveFront';
-
 }

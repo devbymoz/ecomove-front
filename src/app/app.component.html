@@ -10,6 +10,7 @@
 <main class="main">
   <app-navbar></app-navbar>
 
+  <app-login-page></app-login-page>
   <app-alert [message]="'Titre du parent'" [typeAlert]="'alert'"></app-alert>
   <app-card-carpool-historic></app-card-carpool-historic>
   <app-card-annonce-covoit></app-card-annonce-covoit>
@@ -19,12 +20,11 @@
   <app-card-user-rental></app-card-user-rental>
   <app-modal-base></app-modal-base>
   <app-modal-cancel-carpool></app-modal-cancel-carpool>
-  <app-carpool-card-details></app-carpool-card-details> 
+  <app-carpool-card-details></app-carpool-card-details>
   <app-number-page></app-number-page>
   <app-time-selector></app-time-selector>
   <app-bottom-bar></app-bottom-bar>
   <app-footer></app-footer>
-
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
@@ -34,6 +34,5 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-
 
 <router-outlet />

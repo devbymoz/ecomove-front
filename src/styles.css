@@ -45,25 +45,6 @@ h3 {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
 }
 
-@layer utilities {
-  .display-flex-center {
-    @apply flex justify-center items-center
-  }
-
-  .display-flex-between {
-    @apply flex justify-between items-center
-  }
-}
-
-@layer components {
-  .btn-primary {
-    @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
-  }
-  .box-card {
-    @apply rounded-lg border border-app-border mb-5 shadow-card max-w-[385px];
-  }
-}
-
 /* styles généraux */
 
 .container {
@@ -97,4 +78,28 @@ h3 {
 
 .pagination-item.active {
   @apply bg-app-secondary text-white scale-125;
+}
+
+.display-flex-center {
+  @apply flex justify-center items-center;
+}
+
+.display-flex-between {
+  @apply flex justify-between items-center;
+}
+
+.btn-primary {
+  @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
+}
+
+.box-card {
+  @apply rounded-lg border border-app-border mb-5 shadow-card max-w-[385px];
+}
+
+.form-group {
+  @apply my-3;
+}
+
+label {
+  @apply mb-3;
 }
