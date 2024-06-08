@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../../button/button.component.js';
+import { ButtonComponent } from '../../buttons/button/button.component.js';
 
 @Component({
   selector: 'app-card-list-rental-vehicle',
