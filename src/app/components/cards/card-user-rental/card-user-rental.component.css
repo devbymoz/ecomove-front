@@ -1,0 +1,7 @@
+@media screen and (max-width: 350px) {
+  .box-user  {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}

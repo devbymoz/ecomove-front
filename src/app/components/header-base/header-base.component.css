@@ -1,0 +1,9 @@
+@media screen and (min-width: 1024px) {
+  .navigation {
+    display: block;
+    display: flex;
+    align-items: center;
+    gap: 0 40px;
+    font-weight: 500;
+  }
+}
