@@ -1,10 +1,20 @@
-<article class="max-w-[385px] flex flex-col items-center gap-4 bg-white rounded-lg shadow-card overflow-hidden p-4">
+<article class="box-card">
   <img
     src="/assets/vehicles/imagevoiture.svg"
     alt="Voiture"
     class="w-full h-auto"
   />
-  <p class="text-lg">Bordeaux</p>
-  <p class="text-gray-700">Citroën 308</p>
-  <p class="text-app-secondary">Hybride</p>
+
+  <div class="relative">
+    <section class="flex flex-col items-center p-2">
+      <p class="text-lg leading-6">Bordeaux</p>
+      <p class="text-gray-700 text-xs">Citroën 308</p>
+      <p class="text-app-secondary text-xs mt-2">Hybride</p>
+    </section>
+    <img
+      class="absolute top-1/2 right-3 -translate-y-1/2"
+      src="icons/arrow-right.svg"
+      alt=""
+    />
+  </div>
 </article>

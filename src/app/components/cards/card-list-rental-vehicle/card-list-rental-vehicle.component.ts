@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../../button/button.component.js';
-import { NgClass, NgStyle } from '@angular/common';
+import { ButtonComponent } from '../../buttons/button/button.component.js';
 
 @Component({
   selector: 'app-card-list-rental-vehicle',
   standalone: true,
-  imports: [ButtonComponent, NgClass, NgStyle],
+  imports: [ButtonComponent],
   templateUrl: './card-list-rental-vehicle.component.html',
   styleUrl: './card-list-rental-vehicle.component.css'
 })

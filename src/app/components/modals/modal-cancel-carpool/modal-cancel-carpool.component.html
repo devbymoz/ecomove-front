@@ -1,0 +1,18 @@
+<app-modal-base [bgModal]="'bg-app-alert'">
+  <ng-content message-modal>Les personnes qui ont réservé le voyage</ng-content>
+
+  <ng-content under-message>
+    <div class="pt-5 pb-3">
+      <app-card-user-rental class="bg-red-500"></app-card-user-rental>
+    </div>
+    <p class="mb-5">Êtes-vous sûr de vouloir supprimer l'annonce ?</p>
+
+    <app-button [bgBtn]="'bg-app-primary'">
+      <ng-content message-button>Oui</ng-content>
+    </app-button>
+
+    <app-button [bgBtn]="'bg-app-danger'" class="ml-5">
+      <ng-content message-button>Non</ng-content>
+    </app-button>
+  </ng-content>
+</app-modal-base>

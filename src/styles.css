@@ -49,24 +49,6 @@ h3 {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
 }
 
-@layer utilities {
-  .display-flex-center {
-    @apply flex justify-center items-center;
-  }
-
-  .display-flex-between {
-    @apply flex justify-between items-center;
-  }
-}
-
-@layer components {
-  .btn-primary {
-    @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
-  }
-}
-
-/* General styles */
-
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -100,4 +82,44 @@ h3 {
   @apply bg-app-secondary text-white scale-125;
 }
 
+.display-flex-center {
+  @apply flex justify-center items-center;
+}
 
+.display-flex-between {
+  @apply flex justify-between items-center;
+}
+
+.btn-primary {
+  @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
+}
+
+.box-card {
+  @apply rounded-lg border border-app-border mb-5 shadow-card max-w-[385px];
+}
+
+.form-group {
+  @apply my-3;
+}
+
+label {
+  @apply mb-3;
+}
+
+.display-flex-center {
+  @apply flex justify-center items-center;
+}
+
+.display-flex-between {
+  @apply flex justify-between items-center;
+}
+
+.btn-primary {
+  @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
+}
+.box-card {
+  @apply rounded-lg border border-app-border mb-5 shadow-card max-w-[385px];
+}
+.base-button {
+  @apply rounded-lg px-4 py-2 shadow-lg font-normal text-white hover:opacity-90 min-w-[70px];
+}
