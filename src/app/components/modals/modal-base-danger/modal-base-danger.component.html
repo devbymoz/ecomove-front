@@ -1,0 +1,13 @@
+<app-modal-base [bgModal]="'bg-app-danger'">
+    <div message-modal>
+      Êtes-vous sûr de vouloir annuler l'ajout de ce véhicule ? Cette action est irréversible.
+    </div>
+    <div under-message class="mt-5 flex justify-center gap-x-16">
+      <app-button [bgBtn]="'bg-app-primary'">
+        <span message-button>Oui</span>
+      </app-button>
+      <app-button [bgBtn]="'bg-app-danger'">
+        <span message-button>Non</span>
+      </app-button>
+    </div>
+</app-modal-base>
