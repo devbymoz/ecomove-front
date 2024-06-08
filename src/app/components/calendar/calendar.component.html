@@ -1,0 +1,12 @@
+<div class="p-4">
+    <mat-form-field appearance="fill" class="w-full max-w-md">
+      <mat-label class="font-app-font-principal">Entrez une plage de dates</mat-label>
+      <mat-date-range-input [rangePicker]="picker" class="w-full">
+        <input matStartDate placeholder="Date de début" class="p-2 rounded border border-gray-300">
+        <input matEndDate placeholder="Date de fin" class="p-2 rounded border border-gray-300">
+      </mat-date-range-input>
+      <mat-hint>JJ/MM/AAAA – JJ/MM/AAAA</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-date-range-picker #picker></mat-date-range-picker>
+    </mat-form-field>
+  </div>

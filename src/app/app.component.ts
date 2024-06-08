@@ -13,12 +13,14 @@ import { CarpoolCardDetailsComponent } from './components/cards/carpool-card-det
 import { CardListRentalVehicleComponent } from './components/cards/card-list-rental-vehicle/card-list-rental-vehicle.component.js';
 import { NumberPageComponent } from './components/number-page/number-page.component.js';
 import { TimeSelectorComponent } from './components/time-selector/time-selector.component.js';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // Import correct
+import { CalendarComponent } from './components/calendar/calendar.component.js';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent, NumberPageComponent, TimeSelectorComponent, CardListRentalVehicleComponent, CarpoolCardDetailsComponent],
+  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent, NumberPageComponent, TimeSelectorComponent, CardListRentalVehicleComponent, CarpoolCardDetailsComponent, MatSlideToggleModule, CalendarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
