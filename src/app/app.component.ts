@@ -13,12 +13,15 @@ import { CarpoolCardDetailsComponent } from './components/cards/carpool-card-det
 import { CardListRentalVehicleComponent } from './components/cards/card-list-rental-vehicle/card-list-rental-vehicle.component.js';
 import { NumberPageComponent } from './components/number-page/number-page.component.js';
 import { TimeSelectorComponent } from './components/time-selector/time-selector.component.js';
+import { CardUserRentalComponent } from './components/cards/card-user-rental/card-user-rental.component.js';
+import { ModalBaseComponent } from './components/modals/modal-base/modal-base.component.js';
+import { ModalCancelCarpoolComponent } from './components/modals/modal-cancel-carpool/modal-cancel-carpool.component.js';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent, NumberPageComponent, TimeSelectorComponent, CardListRentalVehicleComponent, CarpoolCardDetailsComponent],
+  imports: [RouterOutlet, AlertComponent, BottomBarComponent, ButtonComponent, FooterComponent, CardCarpoolHistoricComponent, CardAnnonceCovoitComponent, CarCardComponent, CardReservationComponent, NavbarComponent, NumberPageComponent, TimeSelectorComponent, CardListRentalVehicleComponent, CarpoolCardDetailsComponent, CardUserRentalComponent, ModalBaseComponent, ModalCancelCarpoolComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

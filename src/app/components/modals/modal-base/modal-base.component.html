@@ -1,0 +1,29 @@
+<div class="box-card min-h-[120px] flex items-center gap-x-5 relative pr-5">
+  <svg
+    class="absolute top-3 right-3"
+    xmlns="http://www.w3.org/2000/svg"
+    width="1em"
+    height="1em"
+    viewBox="0 0 20 20"
+  >
+    <path
+      fill="#9b9b9b"
+      d="M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07m1.41-1.41A8 8 0 1 0 15.66 4.34A8 8 0 0 0 4.34 15.66m9.9-8.49L11.41 10l2.83 2.83l-1.41 1.41L10 11.41l-2.83 2.83l-1.41-1.41L8.59 10L5.76 7.17l1.41-1.41L10 8.59l2.83-2.83z"
+    />
+  </svg>
+
+  <div
+    class="px-2 min-w-[70px] rounded-l-lg flex self-stretch relative"
+    [ngClass]="bgModal"
+  >
+    <p class="absolute top-1/2 right-3 -translate-y-1/2 text-white">Icone</p>
+  </div>
+
+  <section class="py-[40px]">
+    <p>
+      <ng-content select="[message-modal]">Message par default</ng-content>
+    </p>
+    <!-- Pour ajouter des informations à la modal (bouton, card...) -->
+    <ng-content select="[under-message]"></ng-content>
+  </section>
+</div>
