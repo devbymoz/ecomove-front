@@ -49,7 +49,7 @@ import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.compone
     LoginPageComponent,
     NavAdminComponent,
     MatSlideToggleModule, 
-    CalendarComponent
+    CalendarComponent,
   ],
 })
 export class AppComponent {

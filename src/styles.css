@@ -69,6 +69,7 @@ h3 {
   background-color: #eee;
 }
 
+
 /* Pagination */
 .pagination-item {
   @apply flex items-center justify-center border border-gray-300 h-8 w-8 rounded-lg cursor-pointer transition-transform transform;
