@@ -24,6 +24,7 @@ import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.compone
 import { TabsComponent } from './components/tabs/tabs.component.js';
 import { ModalBaseDangerComponent } from './components/modals/modal-base-danger/modal-base-danger.component';
 import { ModalBaseMessageComponent } from './components/modals/modal-base-message/modal-base-message.component';
+import { ReservationVehicleListComponent } from './pages/admin/reservation-vehicle-list/reservation-vehicle-list.component.js';
 import { AuthState } from './store/auth/auth.reducer.js';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -33,7 +34,9 @@ import { Observable } from 'rxjs';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
+
   imports: [RouterOutlet, NavAdminComponent, FooterComponent],
+
 })
 export class AppComponent {
   authState$: Observable<AuthState>;
