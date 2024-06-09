@@ -53,7 +53,7 @@ import { ModalBaseMessageComponent } from './components/modals/modal-base-messag
     NavAdminComponent,
     MatSlideToggleModule, 
     CalendarComponent,
-    TabsComponent
+    TabsComponent,
     ModalBaseDangerComponent,
     ModalBaseMessageComponent
   ],
