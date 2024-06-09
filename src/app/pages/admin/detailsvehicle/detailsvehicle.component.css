@@ -1,0 +1,15 @@
+tr {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px;
+}
+tr:nth-child(odd) {
+  background-color: var(--background-color);
+}
+
+@media screen and (min-width: 1024px) {
+  tr {
+    max-width: 50%;
+  }
+}
