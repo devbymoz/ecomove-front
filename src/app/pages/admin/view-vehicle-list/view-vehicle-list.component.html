@@ -1,0 +1,21 @@
+<main class="flex flex-col gap-3">
+    <h1 class="mb-6">Liste des véhicules de service</h1>
+
+    <p>Ajouter un nouveau véhicule</p>
+
+    <p>Ici va le formulaire</p>
+
+    <div class="flex space-x-3">
+        <app-button [bgBtn]="'bg-app-primary'"><span message-button>Chercher</span></app-button>
+        <app-button [bgBtn]="'bg-app-danger'"><span message-button>Ajouter</span></app-button>
+    </div>
+
+    <section class="flex flex-wrap gap-x-6">
+        <app-vehicle-list></app-vehicle-list>
+        <app-vehicle-list></app-vehicle-list>
+        <app-vehicle-list></app-vehicle-list>
+        <app-vehicle-list></app-vehicle-list>
+    </section>
+
+    <app-number-page></app-number-page>
+</main>

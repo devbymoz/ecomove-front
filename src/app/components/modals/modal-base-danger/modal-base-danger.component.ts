@@ -5,7 +5,7 @@ import { ButtonComponent } from '../../buttons/button/button.component.js';
 @Component({
   selector: 'app-modal-base-danger',
   standalone: true,
-  imports: [ModalBaseComponent,ButtonComponent],
+  imports: [ModalBaseComponent, ButtonComponent],
   templateUrl: './modal-base-danger.component.html',
   styleUrl: './modal-base-danger.component.css'
 })
