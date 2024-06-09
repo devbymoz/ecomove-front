@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { DetailsvehicleComponent } from './pages/admin/detailsvehicle/detailsvehicle.component.js';
 import { HomeComponent } from './pages/home/home.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
   {
