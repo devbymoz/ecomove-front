@@ -1,0 +1,49 @@
+<section>
+  <h1 class="mb-6">Voiture ID : 049304</h1>
+  <img class="max-w-full lg:max-w-[500px]" src="assets/vehicles/vehicle.png" alt="Photo de la voiture" height="100%">
+  
+  <table class="min-w-full mt-2 mb-6">
+    <tbody>
+      <tr>
+        <td>Immatriculation</td>
+        <td>FG-234-HJ</td>
+      </tr>
+      <tr>
+        <td>Marque</td>
+        <td>Toyota</td>
+      </tr>
+      <tr>
+        <td>Modèle</td>
+        <td>RAV 4</td>
+      </tr>
+      <tr>
+        <td>Nb place</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>Catégorie</td>
+        <td>SUV</td>
+      </tr>
+      <tr>
+        <td>Type</td>
+        <td>Hybride</td>
+      </tr>
+      <tr>
+        <td>CO2/km</td>
+        <td>90</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a href="">Liste des réservations</a>
+
+  <div class="mt-6">
+    <app-button [bgBtn]="'bg-app-secondary'" class="mr-6">
+      <ng-content message-button>Modifier</ng-content>
+    </app-button>
+
+    <app-button [bgBtn]="'bg-app-danger'">
+      <ng-content message-button>Supprimer</ng-content>
+    </app-button>
+  </div>
+</section>
