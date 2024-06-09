@@ -21,6 +21,7 @@ import { LoginPageComponent } from './pages/login-page/login-page.component.js';
 import { HeaderBaseComponent } from './components/header-base/header-base.component.js';
 import { NavColabComponent } from './components/navs/nav-colab/nav-colab.component.js';
 import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.component';
+import { TabsComponent } from './components/tabs/tabs.component.js';
 
 @Component({
   selector: 'app-root',
@@ -50,6 +51,7 @@ import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.compone
     NavAdminComponent,
     MatSlideToggleModule, 
     CalendarComponent,
+    TabsComponent
   ],
 })
 export class AppComponent {
