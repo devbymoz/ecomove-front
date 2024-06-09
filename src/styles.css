@@ -27,14 +27,30 @@ body {
 main {
   padding: 38px 16px;
 }
+footer {
+  padding: 38px 38px 8px
+}
+header {
+  padding: 0 16px;
+}
 @media screen and (min-width: 1024px) {
   main {
-    padding: 32px 90px;
+    padding: 32px;
+  }
+  header {
+    padding: 0 32px;
+  }
+  footer {
+    padding: 32px 32px 12px
   }
 }
 
 
 /* Additional styles */
+a {
+  color: var(--secondary-color);
+  text-decoration: underline;;
+}
 
 h1 {
   font-size: 32px;
