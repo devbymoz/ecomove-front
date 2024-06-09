@@ -24,6 +24,7 @@ import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.compone
 import { TabsComponent } from './components/tabs/tabs.component.js';
 import { ModalBaseDangerComponent } from './components/modals/modal-base-danger/modal-base-danger.component';
 import { ModalBaseMessageComponent } from './components/modals/modal-base-message/modal-base-message.component';
+import { ReservationVehicleListComponent } from './pages/admin/reservation-vehicle-list/reservation-vehicle-list.component.js';
 
 @Component({
   selector: 'app-root',
@@ -53,9 +54,10 @@ import { ModalBaseMessageComponent } from './components/modals/modal-base-messag
     NavAdminComponent,
     MatSlideToggleModule, 
     CalendarComponent,
-    TabsComponent
+    TabsComponent,
+    ModalBaseMessageComponent,
     ModalBaseDangerComponent,
-    ModalBaseMessageComponent
+    ReservationVehicleListComponent
   ],
 })
 export class AppComponent {
