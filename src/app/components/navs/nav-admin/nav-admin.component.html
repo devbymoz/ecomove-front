@@ -1,5 +1,7 @@
 <app-header-base>
   <ng-content nav-by-role>
+    @if (userIsLoggedIn) {
+
     <ul class="flex gap-x-[50px]">
       <li><a href="">Les réservations</a></li>
       <li><a href="">Liste des véhicules</a></li>
@@ -26,5 +28,9 @@
       </ng-content>
       <ng-content message-button>Véhicule</ng-content>
     </app-button>
+    <app-button (click)="onLogout()">
+      <ng-content message-button>Se déconnecter</ng-content>
+    </app-button>
+    }
   </ng-content>
 </app-header-base>
