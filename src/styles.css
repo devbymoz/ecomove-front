@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
@@ -6,20 +8,48 @@
 :root {
   --primary-color: #007e33;
   --secondary-color: #01579b;
-  --terciary-color: #ffffff;
+  --tertiary-color: #ffffff;
   --background-color: #f6f6f6;
   --text-color: #000e14;
   --border-color: #d6d9e0;
   --alert-color: #ffc107;
   --danger-color: #e53935;
   --text-light-color: #9b9b9b;
-  --primary-font: "Poppins", sans-serif;
+  --primary-font: "Poppins", sans-serif !important;
 }
 
 body {
   font-family: var(--primary-font);
   color: var(--text-color);
   font-size: 16px;
+}
+
+main {
+  padding: 38px 16px;
+}
+footer {
+  padding: 38px 38px 8px
+}
+header {
+  padding: 0 16px;
+}
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 32px;
+  }
+  header {
+    padding: 0 32px;
+  }
+  footer {
+    padding: 32px 32px 12px
+  }
+}
+
+
+/* Additional styles */
+a {
+  color: var(--secondary-color);
+  text-decoration: underline;;
 }
 
 h1 {
@@ -45,8 +75,6 @@ h3 {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* styles généraux */
-
 .container {
   max-width: 1000px;
   margin: 0 auto;
@@ -67,7 +95,8 @@ h3 {
   background-color: #eee;
 }
 
-/* pagination */
+
+/* Pagination */
 .pagination-item {
   @apply flex items-center justify-center border border-gray-300 h-8 w-8 rounded-lg cursor-pointer transition-transform transform;
 }

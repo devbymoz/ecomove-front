@@ -11,10 +11,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.0.0",
+    "@angular/cdk": "^18.0.2",
     "@angular/common": "^18.0.0",
     "@angular/compiler": "^18.0.0",
     "@angular/core": "^18.0.0",
     "@angular/forms": "^18.0.0",
+    "@angular/material": "^18.0.2",
     "@angular/platform-browser": "^18.0.0",
     "@angular/platform-browser-dynamic": "^18.0.0",
     "@angular/router": "^18.0.0",
@@ -22,7 +24,10 @@
     "@iconify-json/mdi": "^1.1.66",
     "@iconify/iconify": "^3.1.1",
     "@iconify/json": "^2.2.217",
+    "@ngrx/store": "^17.2.0",
+    "@ngrx/store-devtools": "^17.2.0",
     "rxjs": "~7.8.0",
+    "sass": "^1.77.4",
     "tailwindcss-iconify": "^0.0.3",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
