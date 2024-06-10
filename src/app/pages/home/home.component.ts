@@ -21,10 +21,9 @@ import { LoginPageComponent } from '../login-page/login-page.component';
 import { NavAdminComponent } from '../../components/navs/nav-admin/nav-admin.component';
 import { CalendarComponent } from '../../components/calendar/calendar.component';
 import { TabsComponent } from '../../components/tabs/tabs.component';
-import { RadiobuttonsComponent } from '../../components/radiobuttons/radiobuttons.component';
 import { LabelInputComponent } from '../../components/label-input/label-input.component';
 import { SelectorFormComponent } from '../../components/selector-form/selector-form.component';
-
+import { RadiobuttonsComponent } from '../../components/radiobuttons/radiobuttons.component'; // Assurez-vous du chemin correct
 
 @Component({
   selector: 'app-home',
@@ -52,11 +51,11 @@ import { SelectorFormComponent } from '../../components/selector-form/selector-f
     NavColabComponent,
     LoginPageComponent,
     NavAdminComponent,
-    RadiobuttonsComponent,
+    RadiobuttonsComponent, 
     LabelInputComponent,
     SelectorFormComponent
   ],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {}
