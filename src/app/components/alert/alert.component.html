@@ -1,10 +1,11 @@
-<div class="p-4 mb-4 text-sm text-white rounded-lg flex justify-between gap-x-3 flex-wrap"
+<div class="alertModal p-4 mb-4 text-sm text-white rounded-lg flex justify-between gap-x-3 flex-wrap"
 [ngClass]="{
   'bg-app-primary': typeAlert == 'success',
   'bg-app-danger': typeAlert == 'error',
-  'bg-app-alert': typeAlert == 'alert'
+  'bg-app-alert': typeAlert == 'alert',
+  'show': isVisible
   }"
+  
 >
   <span>{{ message }}</span>
-  <img src="icons/close.svg" alt="Fermer la fenetre alerte">
 </div>
