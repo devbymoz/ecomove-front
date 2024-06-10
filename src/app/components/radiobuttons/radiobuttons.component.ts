@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -6,14 +6,20 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-radiobuttons',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './radiobuttons.component.html',
-  styleUrl: './radiobuttons.component.css'
+  templateUrl: './radiobuttons.component.html', // Vérifiez ce chemin
+  styleUrls: ['./radiobuttons.component.css']
 })
 export class RadiobuttonsComponent {
-  selectedStatus: string = '';
+  @Input() selectedValue: string = '';
+  @Output() selectedValueChange = new EventEmitter<string>();
 
-  updateStatus(value: string) {
-    this.selectedStatus = value;
+  options: { value: string, label: string }[] = [
+    { value: 'en_service', label: 'En service' },
+    { value: 'en_reparation', label: 'En réparation' },
+    { value: 'hors_service', label: 'Hors service' }
+  ];
+
+  onValueChange(event: any) {
+    this.selectedValueChange.emit(event.target.value);
   }
-
 }
