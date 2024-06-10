@@ -1,3 +1,4 @@
+import { createAction } from '@ngrx/store';
 import { LOGIN, LOGOUT } from './auth.constants';
 
 export interface AuthAction {
@@ -5,5 +6,5 @@ export interface AuthAction {
   payload?: any;
 }
 
-export const loginAction: AuthAction = { type: LOGIN };
-export const logout: AuthAction = { type: LOGOUT };
+export const loginAction = createAction(LOGIN);
+export const logoutAction = createAction(LOGOUT);

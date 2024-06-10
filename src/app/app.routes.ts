@@ -5,6 +5,8 @@ import { DetailsvehicleComponent } from './pages/admin/detailsvehicle/detailsveh
 import { HomeComponent } from './pages/home/home.component';
 import { AddVehicleComponent } from './pages/admin/add-vehicle/add-vehicle.component';
 import { UpdateVehicleComponent } from './pages/admin/update-vehicle/update-vehicle.component';
+import { AppComponent } from './app.component';
+import { ViewVehicleListComponent } from './pages/admin/view-vehicle-list/view-vehicle-list.component';
 
 export const routes: Routes = [
   {
@@ -29,6 +31,10 @@ export const routes: Routes = [
       {
         path: 'modifier-vehicule',
         component: UpdateVehicleComponent,
+      },
+      {
+        path: 'view-vehicle-list',
+        component: ViewVehicleListComponent
       },
     ]
   },
