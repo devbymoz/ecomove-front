@@ -1,0 +1,15 @@
+<h4>Statut</h4>
+<section class="flex flex-col">
+  <label>
+    <input type="radio" name="status" value="en_service" [(ngModel)]="selectedStatus" (change)="updateStatus('en_service')">
+    en service
+  </label>
+  <label>
+    <input type="radio" name="status" value="en_reparation" [(ngModel)]="selectedStatus" (change)="updateStatus('en_reparation')">
+    en réparation
+  </label>
+  <label>
+    <input type="radio" name="status" value="hors_service" [(ngModel)]="selectedStatus" (change)="updateStatus('hors_service')">
+    hors service
+  </label>
+</section>

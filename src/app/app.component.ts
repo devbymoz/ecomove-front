@@ -47,10 +47,10 @@ export class AppComponent {
   ) {
     this.authState$ = this.store.select('auth');
 
-    this.authState$.subscribe(({ user }) => {
+    /* this.authState$.subscribe(({ user }) => {
       if (user.isLoggedIn) return this.router.navigateByUrl('home');
 
       return this.router.navigateByUrl('login');
-    });
+    }); */
   }
 }
