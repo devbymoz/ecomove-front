@@ -19,6 +19,12 @@ import { HeaderBaseComponent } from '../../components/header-base/header-base.co
 import { NavColabComponent } from '../../components/navs/nav-colab/nav-colab.component';
 import { LoginPageComponent } from '../login-page/login-page.component';
 import { NavAdminComponent } from '../../components/navs/nav-admin/nav-admin.component';
+import { CalendarComponent } from '../../components/calendar/calendar.component';
+import { TabsComponent } from '../../components/tabs/tabs.component';
+import { RadiobuttonsComponent } from '../../components/radiobuttons/radiobuttons.component';
+import { LabelInputComponent } from '../../components/label-input/label-input.component';
+import { SelectorFormComponent } from '../../components/selector-form/selector-form.component';
+
 
 @Component({
   selector: 'app-home',
@@ -38,12 +44,17 @@ import { NavAdminComponent } from '../../components/navs/nav-admin/nav-admin.com
     CardListRentalVehicleComponent,
     CarpoolCardDetailsComponent,
     CardUserRentalComponent,
+    CalendarComponent,
+    TabsComponent,
     ModalBaseComponent,
     ModalCancelCarpoolComponent,
     HeaderBaseComponent,
     NavColabComponent,
     LoginPageComponent,
     NavAdminComponent,
+    RadiobuttonsComponent,
+    LabelInputComponent,
+    SelectorFormComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',

@@ -3,6 +3,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ReservationVehicleListComponent } from './pages/admin/reservation-vehicle-list/reservation-vehicle-list.component';
 import { DetailsvehicleComponent } from './pages/admin/detailsvehicle/detailsvehicle.component.js';
 import { HomeComponent } from './pages/home/home.component';
+import { AddVehicleComponent } from './pages/admin/add-vehicle/add-vehicle.component';
+import { UpdateVehicleComponent } from './pages/admin/update-vehicle/update-vehicle.component';
 
 export const routes: Routes = [
   {
@@ -19,6 +21,14 @@ export const routes: Routes = [
       {
         path: 'details-vehicule',
         component: DetailsvehicleComponent,
+      },
+      {
+        path: 'ajouter-vehicule',
+        component: AddVehicleComponent,
+      },
+      {
+        path: 'modifier-vehicule',
+        component: UpdateVehicleComponent,
       },
     ]
   },
