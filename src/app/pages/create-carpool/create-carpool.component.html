@@ -1,0 +1,26 @@
+<h1>Déposer un covoiturage</h1>
+<p>Compléter les informations suivantes pour créer un covoiturage :</p>
+
+<form>
+  <div class="form-group">
+    <app-selector-form
+      [label]="'label'"
+      [options]="['first option', 'second option']"
+    ></app-selector-form>
+  </div>
+  <div class="form-group">
+    <app-time-selector />
+  </div>
+  <div class="form-group">
+    <app-label-input [label]="'Lieu de départ'"></app-label-input>
+  </div>
+  <div class="form-group">
+    <app-label-input [label]="'Lieu d\'arrivé'"></app-label-input>
+  </div>
+  <div class="form-group">
+    <app-label-input [label]="'Nombre de place'" [type]="'number'"></app-label-input>
+  </div>
+  <div class="form-group">
+   <button type="submit" class="base-button bg-app-secondary">Déposer</button>
+  </div>
+</form>

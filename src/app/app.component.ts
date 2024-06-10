@@ -5,13 +5,14 @@ import { NavAdminComponent } from './components/navs/nav-admin/nav-admin.compone
 import { AuthState } from './store/auth/auth.reducer.js';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { CreateCarpoolComponent } from "./pages/create-carpool/create-carpool.component";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
-  imports: [RouterOutlet, NavAdminComponent, FooterComponent],
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+    imports: [RouterOutlet, NavAdminComponent, FooterComponent, CreateCarpoolComponent]
 })
 export class AppComponent {
   authState$: Observable<AuthState>;
