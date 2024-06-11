@@ -1,0 +1,15 @@
+<div class="mb-4">
+  <label class="block mb-2">
+    {{ label }}
+  </label>
+  <select
+    [(ngModel)]="value"
+    (ngModelChange)="onValueChange($event)"
+    class="mt-1 block shadow w-full pl-3 pr-10 py-2 border border-app-border focus:outline-none focus:ring-app-secondary focus:border-app-secondary rounded-md"
+  >
+    <option value="" disabled>{{ placeholder }}</option>
+    <option *ngFor="let option of options" [value]="option">
+      {{ option }}
+    </option>
+  </select>
+</div>
