@@ -1,4 +1,5 @@
 section {
   background-image: url("/assets/background-images/login-bg-image.svg");
-  background-size: cover;
+  /* background-attachment: fixed; */
+  background-size: contain;
 }
