@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { ViewVehicleListComponent } from './pages/admin/view-vehicle-list/view-vehicle-list.component';
 import { FormVehicleComponent } from './pages/admin/form-vehicle/form-vehicle.component';
+import { SearchVehicleComponent } from './pages/colab/search-vehicle/search-vehicle.component';
 
 export const routes: Routes = [
   {
@@ -35,6 +36,15 @@ export const routes: Routes = [
         path: 'view-vehicle-list',
         component: ViewVehicleListComponent
       },
+    ]
+  },
+  {
+    path: 'colab',
+    children: [
+      {
+        path: 'chercher-un-vehicule',
+        component: SearchVehicleComponent
+      }
     ]
   },
   {
