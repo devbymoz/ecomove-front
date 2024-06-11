@@ -25,6 +25,7 @@ import { LabelInputComponent } from '../../components/label-input/label-input.co
 import { SelectorFormComponent } from '../../components/selector-form/selector-form.component';
 import { RadiobuttonsComponent } from '../../components/radiobuttons/radiobuttons.component'; // Assurez-vous du chemin correct
 
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -53,7 +54,7 @@ import { RadiobuttonsComponent } from '../../components/radiobuttons/radiobutton
     NavAdminComponent,
     RadiobuttonsComponent, 
     LabelInputComponent,
-    SelectorFormComponent
+    SelectorFormComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ViewVehicleListComponent } from './pages/admin/view-vehicle-list/view-vehicle-list.component';
 import { FormVehicleComponent } from './pages/admin/form-vehicle/form-vehicle.component';
 import { SearchVehicleComponent } from './pages/colab/search-vehicle/search-vehicle.component';
+import { DetailsReservationVehicleComponent } from './pages/colab/details-reservation-vehicle/details-reservation-vehicle.component';
 
 export const routes: Routes = [
   {
@@ -44,7 +45,11 @@ export const routes: Routes = [
       {
         path: 'chercher-un-vehicule',
         component: SearchVehicleComponent
-      }
+      },
+      {
+        path: 'details-reservation-vehicule',
+        component: DetailsReservationVehicleComponent
+      },
     ]
   },
   {
