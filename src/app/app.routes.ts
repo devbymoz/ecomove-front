@@ -20,7 +20,7 @@ export const routes: Routes = [
         component: ReservationVehicleListComponent
       },
       {
-        path: 'details-vehicule',
+        path: 'details-vehicule/:id',
         component: DetailsvehicleComponent,
       },
       {

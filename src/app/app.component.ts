@@ -23,7 +23,6 @@ export class AppComponent {
   ) {
     this.authState$ = this.store.select('auth');
 
-
     // this.authState$.subscribe((auth) => {
     //   if (auth.user.isLoggedIn) return this.router.navigateByUrl('home');
 

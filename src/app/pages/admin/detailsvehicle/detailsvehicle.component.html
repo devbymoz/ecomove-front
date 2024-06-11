@@ -1,36 +1,41 @@
+<app-alert #alertModal></app-alert>
 <section>
-  <h1 class="mb-6">Voiture ID : 049304</h1>
-  <img class="max-w-full lg:max-w-[500px]" src="assets/vehicles/vehicle.png" alt="Photo de la voiture" height="100%">
+  <h1 class="mb-6">{{ detailsVehicle?.brandLabel }} {{ detailsVehicle?.modelLabel}}</h1>
+  <img class="max-w-full lg:max-w-[500px]" src="{{ detailsVehicle?.photo }}" alt="Photo de la voiture" height="100%">
   
   <table class="min-w-full mt-2 mb-6">
     <tbody>
       <tr>
+        <td>ID</td>
+        <td>{{ detailsVehicle?.vehicleId }}</td>
+      </tr>
+      <tr>
         <td>Immatriculation</td>
-        <td>FG-234-HJ</td>
+        <td>{{ detailsVehicle?.registration }}</td>
       </tr>
       <tr>
         <td>Marque</td>
-        <td>Toyota</td>
+        <td>{{ detailsVehicle?.brandLabel }}</td>
       </tr>
       <tr>
         <td>Modèle</td>
-        <td>RAV 4</td>
+        <td>{{ detailsVehicle?.modelLabel }}</td>
       </tr>
       <tr>
         <td>Nb place</td>
-        <td>5</td>
+        <td>{{ detailsVehicle?.carSeatNumber }}</td>
       </tr>
       <tr>
         <td>Catégorie</td>
-        <td>SUV</td>
+        <td>{{ detailsVehicle?.categoryLabel }}</td>
       </tr>
       <tr>
         <td>Type</td>
-        <td>Hybride</td>
+        <td>{{ detailsVehicle?.motorizationLabel }}</td>
       </tr>
       <tr>
         <td>CO2/km</td>
-        <td>90</td>
+        <td>{{ detailsVehicle?.cO2emission }}</td>
       </tr>
     </tbody>
   </table>
@@ -42,7 +47,7 @@
       <ng-content message-button>Modifier</ng-content>
     </app-button>
 
-    <app-button [bgBtn]="'bg-app-danger'">
+    <app-button [bgBtn]="'bg-app-danger'" (click)="removeVehicle(id)">
       <ng-content message-button>Supprimer</ng-content>
     </app-button>
   </div>
