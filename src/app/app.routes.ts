@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { AppComponent } from './app.component';
 import { ViewVehicleListComponent } from './pages/admin/view-vehicle-list/view-vehicle-list.component';
 import { FormVehicleComponent } from './pages/admin/form-vehicle/form-vehicle.component';
+import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'page-erreur',
+    component: ErrorsPageComponent,
   },
 ];
