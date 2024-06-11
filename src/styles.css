@@ -122,7 +122,7 @@ h3 {
 }
 
 .box-card {
-  @apply rounded-lg border border-app-border mb-5 shadow-card max-w-[385px];
+  @apply rounded-lg border border-app-border shadow-card max-w-[385px];
 }
 
 .form-group {
@@ -149,4 +149,8 @@ label {
 }
 .base-button {
   @apply rounded-lg px-4 py-2 shadow-lg font-normal text-white hover:opacity-90 min-w-[70px];
+}
+
+.base-input {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-100
 }

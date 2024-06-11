@@ -1,0 +1,39 @@
+<main class="flex flex-col gap-3">
+    <h1>Chercher un véhicule</h1>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <section class="border-b pb-6">
+        <app-label-input label="Marque" [value]="marque" placeholder="Marque"></app-label-input>
+        <app-label-input label="Modèle" [value]="modele" placeholder="Modèle"></app-label-input>
+        <app-selector-form label="Nombre de places" [options]="['2', '4', '5']" [value]="nombreDePlaces" placeholder="Nombre de places"></app-selector-form>
+        <app-selector-form label="Motorisation" [options]="['Hybride', 'Essence', 'Diesel']" [value]="motorisation" placeholder="Motorisation"></app-selector-form>
+        <app-calendar class=""></app-calendar> 
+        <app-button ><ng-content message-button>Chercher</ng-content></app-button>
+    </section>
+
+    <section class="flex flex-col gap-6">
+        <div class="flex justify-between ">
+            <p>154 voitures</p>
+            <app-selector-form [options]="[]" placeholder="trier par"></app-selector-form>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6">
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+            <app-car-card></app-car-card>
+        </div>
+        <app-number-page></app-number-page>
+        
+    </section>
+
+
+    
+
+</main>

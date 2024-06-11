@@ -3,8 +3,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ReservationVehicleListComponent } from './pages/admin/reservation-vehicle-list/reservation-vehicle-list.component';
 import { DetailsvehicleComponent } from './pages/admin/detailsvehicle/detailsvehicle.component.js';
 import { HomeComponent } from './pages/home/home.component';
-import { AddVehicleComponent } from './pages/admin/add-vehicle/add-vehicle.component';
-import { UpdateVehicleComponent } from './pages/admin/update-vehicle/update-vehicle.component';
 import { AppComponent } from './app.component';
 import { ViewVehicleListComponent } from './pages/admin/view-vehicle-list/view-vehicle-list.component';
 import { DetailsCarpoolingComponent } from './pages/colab/details-carpooling/details-carpooling.component';
@@ -14,6 +12,9 @@ import { ListReservedVehiclesComponent } from './pages/colab/list-reserved-vehic
 import { OrganizerCarpoolListComponent } from './pages/colab/organizer-carpool-list/organizer-carpool-list.component';
 import { SearchCarpoolComponent } from './pages/colab/search-carpool/search-carpool.component';
 import { CarpoolReservationHistoryComponent } from './pages/colab/carpool-reservation-history/carpool-reservation-history.component';
+import { FormVehicleComponent } from './pages/admin/form-vehicle/form-vehicle.component';
+import { SearchVehicleComponent } from './pages/colab/search-vehicle/search-vehicle.component';
+import { DetailsReservationVehicleComponent } from './pages/colab/details-reservation-vehicle/details-reservation-vehicle.component';
 
 export const routes: Routes = [
   {
@@ -28,16 +29,16 @@ export const routes: Routes = [
         component: ReservationVehicleListComponent
       },
       {
-        path: 'details-vehicule',
+        path: 'details-vehicule/:id',
         component: DetailsvehicleComponent,
       },
       {
         path: 'ajouter-vehicule',
-        component: AddVehicleComponent,
+        component: FormVehicleComponent,
       },
       {
         path: 'modifier-vehicule',
-        component: UpdateVehicleComponent,
+        component: FormVehicleComponent,
       },
       {
         path: 'view-vehicle-list',
@@ -70,6 +71,19 @@ export const routes: Routes = [
       {
         path: 'carpool-reservation-history',
         component: CarpoolReservationHistoryComponent
+      },
+    ]
+  },
+  {
+    path: 'colab',
+    children: [
+      {
+        path: 'chercher-un-vehicule',
+        component: SearchVehicleComponent
+      },
+      {
+        path: 'details-reservation-vehicule',
+        component: DetailsReservationVehicleComponent
       },
     ]
   },
