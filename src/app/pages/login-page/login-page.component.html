@@ -2,8 +2,8 @@
   <h1 class="pt-32 mb-10">Connectez vous</h1>
   <form
     class="flex flex-col w-1/3"
-    (submit)="onLogin(loginForm)"
-    #loginForm="ngForm"
+    [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()"
   >
     <div class="form-group flex flex-col">
       <label for="email">Email :</label>
@@ -11,24 +11,64 @@
         type="email"
         name="email"
         placeholder="Email"
-        [ngModel]="email"
+        class="base-input"
+        formControlName="email"
+        [class.invalid]="
+          loginForm.get('email')?.invalid &&
+          (loginForm.get('email')?.dirty ||
+            loginForm.get('email')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          loginForm.get('email')?.valid &&
+          (loginForm.get('email')?.dirty ||
+            loginForm.get('email')?.touched ||
+            isSubmitted)
+        "
         required
-        class="p-3 border-2 rounded-lg focus:border-blue-500 focus:border-2 focus:outline-none focus:bg-blue-100"
       />
+
+      @if (loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty ||
+      loginForm.get('email')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Veuillez entre une adresse email valide.</span
+      >
+      }
     </div>
     <div class="form-group flex flex-col">
       <label for="password">Mot de passe : </label>
       <input
         type="password"
         name="password"
-        [ngModel]="password"
-        required
         placeholder="Mot de passe"
-        class="p-3 border-2 rounded-lg focus:border-blue-500 focus:border-2 focus:outline-none focus:bg-blue-100"
+        class="base-input"
+        formControlName="password"
+        [class.invalid]="
+          loginForm.get('password')?.invalid &&
+          (loginForm.get('password')?.dirty ||
+            loginForm.get('password')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          loginForm.get('password')?.valid &&
+          (loginForm.get('password')?.dirty ||
+            loginForm.get('password')?.touched ||
+            isSubmitted)
+        "
+        required
       />
+      @if (loginForm.get('password')?.invalid &&
+      (loginForm.get('password')?.dirty || loginForm.get('password')?.touched ||
+      isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Veuillez entrer un mot de passe valide</span
+      >
+      }
     </div>
     <div class="form-group">
-      <button class="bg-app-primary btn-primary">Se connecter</button>
+      <button type="submit" class="bg-app-primary btn-primary">
+        Se connecter
+      </button>
     </div>
   </form>
 </section>
