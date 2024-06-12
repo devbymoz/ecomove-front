@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { ButtonComponent } from '../../../components/buttons/button/button.component.js';
 import { NgClass } from '@angular/common';
 import { VehicleService } from '../../../services/vehicle.service.js';
-import { DetailsVehicle } from '../../../models/details-vehicle.interface.js';
+import { DetailsVehicle } from '../../../models/vehicles/details-vehicle.interface.js';
 import { ActivatedRoute, RedirectCommand, Router } from '@angular/router';
 import { AlertComponent } from '../../../components/alert/alert.component.js';
 import { Subscription } from 'rxjs';
