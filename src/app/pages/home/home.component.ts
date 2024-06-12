@@ -24,6 +24,8 @@ import { TabsComponent } from '../../components/tabs/tabs.component';
 import { LabelInputComponent } from '../../components/label-input/label-input.component';
 import { SelectorFormComponent } from '../../components/selector-form/selector-form.component';
 import { RadiobuttonsComponent } from '../../components/radiobuttons/radiobuttons.component'; // Assurez-vous du chemin correct
+import { ReserverComponent } from '../../components/reserver/reserver.component';
+
 
 
 @Component({
@@ -55,6 +57,7 @@ import { RadiobuttonsComponent } from '../../components/radiobuttons/radiobutton
     RadiobuttonsComponent, 
     LabelInputComponent,
     SelectorFormComponent,
+    ReserverComponent,
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']

@@ -86,6 +86,10 @@ export const routes: Routes = [
         path: 'details-reservation-vehicule',
         component: DetailsReservationVehicleComponent
       },
+      {
+        path: 'modification-reservation-vehicule',
+        component: DetailsReservationVehicleComponent
+      }
     ]
   },
   {
