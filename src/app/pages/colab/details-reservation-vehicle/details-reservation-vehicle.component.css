@@ -1,0 +1,32 @@
+@media (min-width: 1024px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "description header"
+            "description reservation"
+            "details reservation"
+            "details reservation";
+        gap: 10px; /* espace entre les cellules de la grille */
+    }
+    .header {
+        grid-area: header;
+        background-color: lightblue;
+    }
+    
+    .description {
+        grid-area: description;
+        background-color: lightcoral;
+    }
+
+    .details {
+        grid-area: details;
+        background-color: lightsalmon;
+    }
+
+    .reservation {
+        grid-area: reservation;
+        background-color: lightgreen;
+    }
+}

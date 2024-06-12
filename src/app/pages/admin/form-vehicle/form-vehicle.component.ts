@@ -38,19 +38,20 @@ export class FormVehicleComponent {
 
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.url.subscribe(url => {
-      if (url.some(segment => segment.path === 'modifier-vehicule')) {
-        this.editMode();
-      } else {
-        this.addMode();
-      }
+      this.showStatusOptions = url.some(segment => segment.path === 'modifier-vehicule');
+      this.initializeForm();
     });
   }
 
-  editMode() {
-    this.title = 'Modifier un véhicule de service';
-    this.description = '';
-    this.showStatusOptions = true;
+  initializeForm() {
+    if (this.showStatusOptions) {
+      this.editMode();
+    } else {
+      this.addMode();
+    }
+  }
 
+  editMode() {
     this.immatriculation = 'AA-123-BB';
     this.marque = 'Peugeot';
     this.modele = '108';
@@ -63,11 +64,6 @@ export class FormVehicleComponent {
   }
 
   addMode() {
-    this.title = 'Ajouter un nouveau véhicule de service';
-    this.description = 'Compléter les informations suivantes pour créer un nouveau véhicule';
-    this.showStatusOptions = false;
-
-    // Réinitialiser les données pour l'ajout
     this.immatriculation = '';
     this.marque = '';
     this.modele = '';
@@ -81,13 +77,13 @@ export class FormVehicleComponent {
 
   onSubmit() {
     if (this.showStatusOptions) {
-      
+      // Logique de modification
     } else {
-      
+      // Logique d'ajout
     }
   }
 
   onCancel() {
-   
+    // Logique d'annulation
   }
 }
