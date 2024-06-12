@@ -6,42 +6,58 @@ import { DetailsVehicle } from '../../../models/details-vehicle.interface.js';
 import { ActivatedRoute, RedirectCommand, Router } from '@angular/router';
 import { AlertComponent } from '../../../components/alert/alert.component.js';
 import { Subscription } from 'rxjs';
+import { SpinnerComponent } from '../../../components/spinner/spinner.component.js';
 
 @Component({
   selector: 'app-detailsvehicle',
   standalone: true,
-  imports: [ButtonComponent, NgClass, AlertComponent],
+  imports: [ButtonComponent, NgClass, AlertComponent, SpinnerComponent],
   templateUrl: './detailsvehicle.component.html',
   styleUrl: './detailsvehicle.component.css',
 })
-export class DetailsvehicleComponent implements OnInit, OnDestroy{
+export class DetailsvehicleComponent implements OnInit, OnDestroy {
   private _detailsVehicle: DetailsVehicle | undefined;
   private _vehicleService = inject(VehicleService);
   private _route = inject(ActivatedRoute);
-  private _router = inject(Router);
+  router = inject(Router);
   id: string = '';
-  // private _fetDetailsVehicleSubscription: Subscription<> = "";
-
   @ViewChild('alertModal') alertModal!: AlertComponent;
+  private _fetDetailsVehicleSubscription: Subscription | undefined;
+  private _fetRemoveVehicleSubscription: Subscription | undefined;
+  responseValid: boolean | undefined = undefined;
 
   ngOnInit(): void {
     this._route.params.subscribe((params) => {
       this.id = params['id'];
     });
 
-    this._vehicleService.fetDetailsVehicle(this.id).subscribe({
-      next: (response) => {
-        this._detailsVehicle = response.data;
-      },
-      error: (err) => {
-        console.log("Message : ", err.error.message);
-        console.log("Code :", err.error.codeStatus);
-      }
-    });
+    this._fetDetailsVehicleSubscription = this._vehicleService
+      .fetDetailsVehicle(this.id)
+      .subscribe({
+        next: (response) => {
+          this._detailsVehicle = response.data;
+          this.responseValid = true;
+        },
+        error: (err) => {
+          this.responseValid = false;
+          setTimeout(() => {
+            
+              this.router.navigate(['page-erreur']);
+            
+          }, 3000);
+          console.log('Message : ', err.error.message);
+          console.log('Code :', err.error.codeStatus);
+        },
+      });
   }
 
   ngOnDestroy(): void {
-    // this._fetDetailsVehicleSubscription.unsubscribe()
+    if (this._fetDetailsVehicleSubscription != undefined) {
+      this._fetDetailsVehicleSubscription.unsubscribe();
+    }
+    if (this._fetRemoveVehicleSubscription != undefined) {
+      this._fetRemoveVehicleSubscription.unsubscribe();
+    }
   }
 
   get detailsVehicle() {
@@ -49,19 +65,18 @@ export class DetailsvehicleComponent implements OnInit, OnDestroy{
   }
 
   removeVehicle(id: string): void {
-    this._vehicleService.fetchRemoveVehicle(id).subscribe({
-      next: (data) => {
-        console.log('Données reçues : ', data);
-      },
-      error: (err) => {
-        this.alertModal.show(err.error.message, err.error.codeStatus);
-        setTimeout(()=> {
-          this.alertModal.hidden();
-        }, 5000);
-      },
-      complete: () => {
-        console.log('Requête terminée');
-      },
-    });
+    this._fetRemoveVehicleSubscription = this._vehicleService
+      .fetchRemoveVehicle(id)
+      .subscribe({
+        next: (data) => {
+          console.log('Données reçues : ', data);
+        },
+        error: (err) => {
+          this.alertModal.show(err.error.message, err.error.codeStatus);
+          setTimeout(() => {
+            this.alertModal.hidden();
+          }, 5000);
+        },
+      });
   }
 }

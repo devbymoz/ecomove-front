@@ -13,6 +13,7 @@ import { OrganizerCarpoolListComponent } from './pages/colab/organizer-carpool-l
 import { SearchCarpoolComponent } from './pages/colab/search-carpool/search-carpool.component';
 import { CarpoolReservationHistoryComponent } from './pages/colab/carpool-reservation-history/carpool-reservation-history.component';
 import { FormVehicleComponent } from './pages/admin/form-vehicle/form-vehicle.component';
+import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
 import { SearchVehicleComponent } from './pages/colab/search-vehicle/search-vehicle.component';
 import { DetailsReservationVehicleComponent } from './pages/colab/details-reservation-vehicle/details-reservation-vehicle.component';
 
@@ -90,5 +91,9 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+  },
+  {
+    path: 'page-erreur',
+    component: ErrorsPageComponent,
   },
 ];

@@ -1,11 +1,11 @@
-<div class="alertModal p-4 mb-4 text-sm text-white rounded-lg flex justify-between gap-x-3 flex-wrap"
-[ngClass]="{
-  'bg-app-primary': typeAlert == 'success',
-  'bg-app-danger': typeAlert == 'error',
-  'bg-app-alert': typeAlert == 'alert',
-  'show': isVisible
+<div
+  class="alertModal p-4 mb-4 text-sm text-white rounded-lg flex justify-between gap-x-3 flex-wrap"
+  [ngClass]="{
+    show: isVisible,
+    success: isSuccess,
+    alert: isAlert,
+    error: isError
   }"
-  
 >
   <span>{{ message }}</span>
 </div>

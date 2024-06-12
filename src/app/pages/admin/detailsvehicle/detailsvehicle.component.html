@@ -1,8 +1,21 @@
+@if (responseValid == undefined) { 
+  <app-spinner></app-spinner>
+} @else if (!responseValid) {
+  <h1>Pas de contenu</h1>
+}
+@else {
 <app-alert #alertModal></app-alert>
 <section>
-  <h1 class="mb-6">{{ detailsVehicle?.brandLabel }} {{ detailsVehicle?.modelLabel}}</h1>
-  <img class="max-w-full lg:max-w-[500px]" src="{{ detailsVehicle?.photo }}" alt="Photo de la voiture" height="100%">
-  
+  <h1 class="mb-6 ">
+    {{ detailsVehicle?.brandLabel }} {{ detailsVehicle?.modelLabel }}
+  </h1>
+  <img
+    class="max-w-full lg:max-w-[500px]"
+    src="{{ detailsVehicle?.photo }}"
+    alt="Photo de la voiture"
+    height="100%"
+  />
+
   <table class="min-w-full mt-2 mb-6">
     <tbody>
       <tr>
@@ -40,15 +53,11 @@
     </tbody>
   </table>
 
-  <a href="">Liste des réservations</a>
+  <a routerLink="/reservation-vehicule">Liste des réservations</a>
 
   <div class="mt-6">
-    <app-button [bgBtn]="'bg-app-secondary'" class="mr-6">
-      <ng-content message-button>Modifier</ng-content>
-    </app-button>
-
-    <app-button [bgBtn]="'bg-app-danger'" (click)="removeVehicle(id)">
-      <ng-content message-button>Supprimer</ng-content>
-    </app-button>
+    <button >Modifier</button>
+    <button (click)="removeVehicle(id)">Supprimer</button>
   </div>
 </section>
+}
