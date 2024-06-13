@@ -5,13 +5,12 @@ import { LabelInputComponent } from '../../../components/label-input/label-input
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CalendarComponent } from '../../../components/calendar/calendar.component';
-import { ButtonComponent } from '../../../components/buttons/button/button.component';
 import { NumberPageComponent } from '../../../components/number-page/number-page.component';
 
 @Component({
   selector: 'app-search-vehicle',
   standalone: true,
-  imports: [CarCardComponent, SelectorFormComponent,LabelInputComponent,CommonModule, FormsModule, CalendarComponent, ButtonComponent, NumberPageComponent],
+  imports: [CarCardComponent, SelectorFormComponent,LabelInputComponent,CommonModule, FormsModule, CalendarComponent, NumberPageComponent],
   templateUrl: './search-vehicle.component.html',
   styleUrl: './search-vehicle.component.css'
 })
