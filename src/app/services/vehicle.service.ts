@@ -12,6 +12,11 @@ export class VehicleService {
   readonly url = environment.apiURL + "/vehicles/";
   private _http = inject(HttpClient);
 
+  //permet de récuperer tous les véhicules
+  fetchListVehicle(): Observable<Response>{
+    return this._http.get<Response>(this.url);
+  }
+
   // Permet de récupérer un véhicule via son Id.
   fetDetailsVehicle(id: string): Observable<Response> {
     return this._http.get<Response>(this.url + id);
