@@ -1,29 +1,29 @@
-<main class="gap-3">
-    <h1 class="mb-6">Liste des véhicules de service</h1>
+<main class="gap-3 mt-[70px]">
+  <h1 class="mb-6">Liste des véhicules de service</h1>
 
-    <p>Ajouter un nouveau véhicule</p>
+  <p>Ajouter un nouveau véhicule</p>
 
-        <form>
-            <div>
-                <label for="immatriculation">Immatriculation</label>
-                <input type="text" id="immatriculation" placeholder="AA-123-BB">
-            </div>
-            <div>
-                <label for="marque">Marque</label>
-                <input type="text" id="marque" placeholder="Peugeot">
-            </div>
-        </form>
-    <div class="flex space-x-3 mt-6">
-        <button class="bg-app-primary">Chercher</button>
-        <button class="bg-app-danger">Ajouter</button>
+  <form>
+    <div>
+      <label for="immatriculation">Immatriculation</label>
+      <input type="text" id="immatriculation" placeholder="AA-123-BB" />
     </div>
+    <div>
+      <label for="marque">Marque</label>
+      <input type="text" id="marque" placeholder="Peugeot" />
+    </div>
+  </form>
+  <div class="flex space-x-3 mt-6">
+    <button class="bg-app-primary">Chercher</button>
+    <button class="bg-app-danger">Ajouter</button>
+  </div>
 
-    <section class="flex flex-wrap gap-x-6">
-        <app-vehicle-list></app-vehicle-list>
-        <app-vehicle-list></app-vehicle-list>
-        <app-vehicle-list></app-vehicle-list>
-        <app-vehicle-list></app-vehicle-list>
-    </section>
+  <section class="flex flex-wrap gap-x-6">
+    <app-vehicle-list></app-vehicle-list>
+    <app-vehicle-list></app-vehicle-list>
+    <app-vehicle-list></app-vehicle-list>
+    <app-vehicle-list></app-vehicle-list>
+  </section>
 
-    <app-number-page></app-number-page>
+  <app-number-page></app-number-page>
 </main>

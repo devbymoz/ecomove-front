@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavAdminComponent } from './nav-admin.component';
+import { NavAdminComponent } from './nav.component';
 
 describe('NavAdminComponent', () => {
   let component: NavAdminComponent;
@@ -8,9 +8,8 @@ describe('NavAdminComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [NavAdminComponent]
-    })
-    .compileComponents();
+      imports: [NavAdminComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NavAdminComponent);
     component = fixture.componentInstance;
