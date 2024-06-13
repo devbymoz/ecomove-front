@@ -16,6 +16,7 @@ import { FormVehicleComponent } from './pages/admin/form-vehicle/form-vehicle.co
 import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
 import { SearchVehicleComponent } from './pages/colab/search-vehicle/search-vehicle.component';
 import { DetailsReservationVehicleComponent } from './pages/colab/details-reservation-vehicle/details-reservation-vehicle.component';
+import { PostCarpoolingAnnouncementComponent } from './pages/colab/post-carpooling-announcement/post-carpooling-announcement.component';
 import { ChangeCarpoolingComponent } from './pages/colab/change-carpooling/change-carpooling.component';
 import { adminGuard, loginGuard } from './guards/admin.guard';
 
@@ -50,9 +51,54 @@ export const routes: Routes = [
         path: 'view-vehicle-list',
         component: ViewVehicleListComponent,
       },
+    ]
+  },
+  {
+    path: 'colab',
+    children: [
+      {
+        path: 'chercher-un-vehicule',
+        component: SearchVehicleComponent
+      },
+      {
+        path: 'details-reservation-vehicule',
+        component: DetailsReservationVehicleComponent
+      },
+      {
+        path: 'post-carpooling-announcement',
+        component: PostCarpoolingAnnouncementComponent 
+      },
       {
         path: 'details-reservation-carpooling',
-        component: DetailsReservationCarpoolingComponent,
+        component: DetailsReservationCarpoolingComponent 
+      },
+      {
+        path: 'details-carpooling',
+        component: DetailsCarpoolingComponent 
+      },
+      {
+        path: 'announcement-carpooling-organizer',
+        component: AnnouncementCarpoolingOrganizerComponent 
+      },
+      {
+        path: 'list-reserved-vehicles',
+        component: ListReservedVehiclesComponent 
+      },
+      {
+        path: 'organizer-carpool-list',
+        component: OrganizerCarpoolListComponent 
+      },
+      {
+        path: 'search-carpool',
+        component: SearchCarpoolComponent 
+      },
+      {
+        path: 'carpool-reservation-history',
+        component: CarpoolReservationHistoryComponent 
+      },
+      {
+        path: 'post-carpooling-announcement',
+        component: PostCarpoolingAnnouncementComponent,
       },
       {
         path: 'details-carpooling',
@@ -79,27 +125,6 @@ export const routes: Routes = [
         component: CarpoolReservationHistoryComponent,
       },
     ],
-  },
-  {
-    path: 'colab',
-    children: [
-      {
-        path: 'chercher-un-vehicule',
-        component: SearchVehicleComponent,
-      },
-      {
-        path: 'details-reservation-vehicule',
-        component: DetailsReservationVehicleComponent,
-      },
-      {
-        path: 'modification-reservation-vehicule',
-        component: DetailsReservationVehicleComponent
-      },
-      {
-        path: 'modification-annonce-covoiturage',
-        component: ChangeCarpoolingComponent
-      }
-    ]
   },
   {
     path: 'home',

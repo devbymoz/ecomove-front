@@ -6,6 +6,7 @@ import { TimeSelectorComponent } from '../../../components/time-selector/time-se
 import { ButtonComponent } from '../../../components/buttons/button/button.component';
 import { ReserverComponent } from '../../../components/reserver/reserver.component';
 
+
 @Component({
   selector: 'app-details-reservation-vehicle',
   standalone: true,

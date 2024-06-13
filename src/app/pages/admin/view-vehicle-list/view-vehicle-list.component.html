@@ -3,11 +3,19 @@
 
     <p>Ajouter un nouveau véhicule</p>
 
-    <p>Ici va le formulaire</p>
-
-    <div class="flex space-x-3">
-        <button class="'bg-app-primary'">Chercher</button>
-        <button class="'bg-app-danger'">Ajouter</button>
+        <form>
+            <div>
+                <label for="immatriculation">Immatriculation</label>
+                <input type="text" id="immatriculation" placeholder="AA-123-BB">
+            </div>
+            <div>
+                <label for="marque">Marque</label>
+                <input type="text" id="marque" placeholder="Peugeot">
+            </div>
+        </form>
+    <div class="flex space-x-3 mt-6">
+        <button class="bg-app-primary">Chercher</button>
+        <button class="bg-app-danger">Ajouter</button>
     </div>
 
     <section class="flex flex-wrap gap-x-6">

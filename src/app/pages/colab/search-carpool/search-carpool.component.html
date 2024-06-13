@@ -2,12 +2,26 @@
     <h1>Chercher un covoiturage</h1>
 
     <p class="mb-6">Lorem ipsum dolor amet</p>
-
-    <button class="'bg-app-primary'">Chercher</button>
-
-    <div class="text-xs text-app-text mb-4">54 covoiturage</div>
     
-    <section class="flex flex-wrap gap-x-6">
+    <form class="flex flex-col gap-6">
+
+        <label for="departure">Départ</label>
+        <input type="text" id="departure" placeholder="Montpellier">
+
+        <label for="arrival">Destination</label>
+        <input type="text" id="arrival" placeholder="Paris">
+
+        <label for="number-passengers">Nombre de passager</label>
+        <input type="text" id="number-passengers">
+    </form>
+
+    <app-time-selector></app-time-selector>
+
+    <button class="bg-app-primary">Chercher</button>
+
+    <div class="text-xs text-app-text mt-4 mb-4">54 covoiturage</div>
+    
+    <section class="flex flex-wrap gap-6">
         <app-card-annonce-covoit></app-card-annonce-covoit>
         <app-card-annonce-covoit></app-card-annonce-covoit>
         <app-card-annonce-covoit></app-card-annonce-covoit>
@@ -17,5 +31,5 @@
         <app-card-annonce-covoit></app-card-annonce-covoit>
     </section>
 
-    <app-number-page></app-number-page>
+    <app-number-page class="mt-4"></app-number-page>
 </main>

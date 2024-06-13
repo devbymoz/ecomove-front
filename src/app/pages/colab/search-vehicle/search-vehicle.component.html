@@ -7,7 +7,7 @@
         <app-selector-form label="Nombre de places" [options]="['2', '4', '5']" [value]="nombreDePlaces" placeholder="Nombre de places"></app-selector-form>
         <app-selector-form label="Motorisation" [options]="['Hybride', 'Essence', 'Diesel']" [value]="motorisation" placeholder="Motorisation"></app-selector-form>
         <app-calendar class=""></app-calendar> 
-        <app-button ><ng-content message-button>Chercher</ng-content></app-button>
+        <button >Chercher</button>
     </section>
 
     <section class="flex flex-col gap-6">
@@ -32,8 +32,5 @@
         <app-number-page></app-number-page>
         
     </section>
-
-
-    
 
 </main>
