@@ -163,31 +163,9 @@ label {
 }
 
 
-
-/* .ng-valid[required], .ng-valid.required  {
-  border-left: 15px solid var(--primary-color); 
+.registration-plate {
+  border-left: 15px solid #2c3fa0; 
 }
-.ng-invalid:not(form)  {
-  border-left: 15px solid var(--danger-color);
-}
-.alert div {
-  background-color: #fed3d3;
-  color: var(--danger-color);
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-.form-group {
-  margin-bottom: 1rem;
-}
-label {
-  display: block;
-  margin-bottom: .5rem;
-}
-select {
-  width: 100%;
-  padding: .5rem;
-} */
-
 
 .invalid {
   border: 2px solid red;

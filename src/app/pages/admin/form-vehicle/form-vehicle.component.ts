@@ -1,6 +1,11 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormsModule,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { VehicleService } from '../../../services/vehicle.service.js';
 import { CreateVehicle } from '../../../models/vehicles/create-vehicle.interface.js';
@@ -10,44 +15,49 @@ import { Category } from '../../../models/categories/category.interface.js';
 import { CategoryService } from '../../../services/category/category.service.js';
 import { MotorizationService } from '../../../services/motorization/motorization.service.js';
 import { Motorization } from '../../../models/motorizations/motorization.interface.js';
+import { ModelService } from '../../../services/model/model.service.js';
+import { Model } from '../../../models/models/model.interface.js';
 
 @Component({
   selector: 'app-form-vehicle',
   standalone: true,
-  imports: [
-    CommonModule, 
-    FormsModule,
-    ReactiveFormsModule
-  ],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './form-vehicle.component.html',
-  styleUrls: ['./form-vehicle.component.css']
+  styleUrls: ['./form-vehicle.component.css'],
 })
-export class FormVehicleComponent implements OnInit{
+export class FormVehicleComponent implements OnInit {
   title: string = '';
   description: string = '';
+
+  // Pour afficher les boutons radios de changement de status
   showStatusOptions: boolean = false;
+
   isSubmitted = false;
   private _serviceVehicle = inject(VehicleService);
   private _formBuilder = inject(FormBuilder);
   private _brandService = inject(BrandService);
   brands: Brands[] = [];
   private _categoryService = inject(CategoryService);
-  categories: Category[] = []
-  carSeatNumbers: number[] = [2, 3, 4, 5, 6, 7, 8]
+  categories: Category[] = [];
+  carSeatNumbers: number[] = [2, 3, 4, 5, 6, 7, 8];
   private _motorizationService = inject(MotorizationService);
   motorizations: Motorization[] = [];
+  private _modelService = inject(ModelService);
+  models: Model[] = [];
+  showModels: boolean = false;
 
   // Validation des champs du formulaires
   createVehicleForm = this._formBuilder.group({
     registration: ['', [Validators.maxLength(10), Validators.minLength(5)]],
-    brand: ['',],
-    model: ['',],
-    category: ['',],
-    photo: ['',],
-    carSeatNumber: ['',],
-    motorization: ['',],
-    cO2emission: ['',],
-    consumption: ['',]
+    brand: [''],
+    model: [''],
+    category: [''],
+    // Voir pour mettre une regex pour une url
+    photo: [''],
+    carSeatNumber: [''],
+    motorization: [''],
+    cO2emission: ['', [Validators.maxLength(3)]],
+    consumption: ['', [Validators.maxLength(4)]],
   });
 
   constructor(private activatedRoute: ActivatedRoute) {
@@ -60,29 +70,39 @@ export class FormVehicleComponent implements OnInit{
     // });
   }
 
+  selectModel() {
+    if (this.createVehicleForm.value.brand != null) {
+      this._modelService.fetchModelsByBrand(+this.createVehicleForm.value.brand).subscribe({
+        next: (models) => {
+          this.models = models;
+          this.showModels = true;
+        },
+      });
+    }
+  }
+
+  // Ajouter les cas d'erreurs et les unsubscribe
   ngOnInit(): void {
     this._brandService.fetBrands().subscribe({
       next: (response) => {
         this.brands = response.data;
-      }
+      },
     });
 
     this._categoryService.fetCategories().subscribe({
       next: (response) => {
         this.categories = response.data;
-      }
+      },
     });
 
     this._motorizationService.fetMotorizations().subscribe({
       next: (response) => {
         this.motorizations = response.data;
-      }
+      },
     });
-
-
   }
 
-
+  // Ajouter un message lorsque le formulaire n'est pas complet
   onSubmit() {
     this.isSubmitted = true;
 
@@ -95,8 +115,8 @@ export class FormVehicleComponent implements OnInit{
         consumption: +this.createVehicleForm.value.consumption!,
         categoryId: +this.createVehicleForm.value.category!,
         motorizationId: +this.createVehicleForm.value.motorization!,
-        modelId: +this.createVehicleForm.value.model!
-      }    
+        modelId: +this.createVehicleForm.value.model!,
+      };
 
       this._serviceVehicle.fetchCreateVehicle(newVehicle).subscribe({
         next: (response) => {
@@ -104,42 +124,25 @@ export class FormVehicleComponent implements OnInit{
         },
         error: (err) => {
           console.log(err);
-          
+
           // this.responseValid = false;
           // setTimeout(() => {
-            
+
           //     this.router.navigate(['page-erreur']);
-            
+
           // }, 3000);
           console.log('Message : ', err.error.message);
           console.log('Code :', err.error.codeStatus);
         },
       });
-
-
-
     }
 
-
-
     // if (this.showStatusOptions) {
-      
+
     // } else {
-      
+
     // }
   }
-
-
-
-
-
-
-
-
-
-
-
-
 
   // immatriculation: string = '';
   // marque: string = '';
@@ -184,9 +187,5 @@ export class FormVehicleComponent implements OnInit{
   //   this.status = 'en service';
   // }
 
-
-
-  onCancel() {
-
-  }
+  onCancel() {}
 }

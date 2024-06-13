@@ -9,7 +9,7 @@
         type="text"
         id="registration"
         name="registration"
-        class="base-input"
+        class="base-input registration-plate"
         placeholder="AA-123-BB"
         formControlName="registration"
         [class.invalid]="
@@ -52,13 +52,14 @@
             createVehicleForm.get('brand')?.touched ||
             isSubmitted)
         "
+        (change)="selectModel()"
         required
       >
         <option value="" disabled selected hidden>
           Sélectionnez la marque
         </option>
         @for (brand of brands; track $index) {
-          <option value="{{ brand.brandId }}">{{ brand.brandLabel }}</option>
+        <option value="{{ brand.brandId }}">{{ brand.brandLabel }}</option>
         }
       </select>
     </div>
@@ -68,8 +69,7 @@
     <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
       Veuillez séléctionner une marque.</span
     >
-    }
-
+    } @if (showModels) {
     <div class="form-group">
       <label for="model">Model</label>
       <select
@@ -90,7 +90,9 @@
         required
       >
         <option value="" disabled selected hidden>Séléctionnez un model</option>
-        <option value="2">308</option>
+        @for (model of models; track $index) {
+        <option value="{{ model.brandId }}">{{ model.modelLabel }}</option>
+        }
       </select>
     </div>
     @if (createVehicleForm.get('model')?.invalid &&
@@ -99,7 +101,7 @@
     <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
       Veuillez séléctionner un modèle.</span
     >
-    }
+    } }
 
     <div class="form-group">
       <label for="model">Catégorie</label>
@@ -124,7 +126,9 @@
           Séléctionnez une catégorie
         </option>
         @for (category of categories; track $index) {
-          <option value="{{ category.categoryId }}">{{ category.categoryLabel }}</option>
+        <option value="{{ category.categoryId }}">
+          {{ category.categoryLabel }}
+        </option>
         }
       </select>
     </div>
@@ -189,7 +193,7 @@
           Séléctionnez le nombre de place
         </option>
         @for (carSeatNumber of carSeatNumbers; track carSeatNumber) {
-          <option value={{carSeatNumber}}>{{ carSeatNumber }}</option>
+        <option value="{{ carSeatNumber }}">{{ carSeatNumber }}</option>
         }
       </select>
     </div>
@@ -224,7 +228,9 @@
           Séléctionnez une motorisation
         </option>
         @for (motorization of motorizations; track $index) {
-          <option value="{{ motorization.motorizationId }}">{{ motorization.motorizationLabel }}</option>
+        <option value="{{ motorization.motorizationId }}">
+          {{ motorization.motorizationLabel }}
+        </option>
         }
       </select>
     </div>
@@ -298,24 +304,6 @@
 
     <p>Form Status: {{ createVehicleForm.status }}</p>
     <button type="submit" [disabled]="!createVehicleForm.valid">Submit</button>
-
-    <!-- <p>Value: {{ loginForm.value.brand }}</p> -->
-
-    <!-- <button type="submit">Valider</button> -->
-
-    <!-- <p>Value: {{ name.value }}</p> -->
-
-    <!--
-    
-
-
-
-
-
-     -->
-    <!-- <button type="submit" [disabled]="!loginForm.valid">Valider</button> -->
-
-    <!-- <button type="submit">Valider</button> -->
   </form>
 
   <!-- <div *ngIf="showStatusOptions" class="flex flex-col gap-2">
