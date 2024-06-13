@@ -26,7 +26,6 @@ export class AlertComponent {
     } else {
       this.Alert();
     }
-
     this.message = message;
     this.isVisible = true;
   }
@@ -50,5 +49,4 @@ export class AlertComponent {
     this.isAlert = false;
     this.isError = true;
   }
-
 }

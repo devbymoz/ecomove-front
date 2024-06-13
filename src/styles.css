@@ -28,7 +28,7 @@ main {
   padding: 38px 16px;
 }
 footer {
-  padding: 38px 38px 8px;
+  padding: 38px 16px 8px;
 }
 header {
   padding: 0 16px;
@@ -148,19 +148,6 @@ button {
 .box-card {
   @apply rounded-lg border border-app-border shadow-card max-w-[385px];
 }
- 
-input {
-  @apply shadow appearance-none border rounded w-full py-2 px-3 mt-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-100
-}
- 
-select {
-  @apply mt-1 block shadow w-full pl-3 pr-10 py-2 border border-app-border focus:outline-none focus:ring-app-secondary focus:border-app-secondary rounded-md
-}
-
-form {
-  @apply flex flex-col gap-6
-}
- 
 
 .base-input {
   @apply shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:outline-none;
@@ -175,7 +162,7 @@ select {
 }
 
 form {
-  @apply flex flex-col gap-6
+  @apply flex flex-col 
 }
 
 
