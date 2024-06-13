@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -17,21 +17,20 @@ import { MotorizationService } from '../../../services/motorization/motorization
 import { Motorization } from '../../../models/motorizations/motorization.interface.js';
 import { ModelService } from '../../../services/model/model.service.js';
 import { Model } from '../../../models/models/model.interface.js';
+import { AlertComponent } from '../../../components/alert/alert.component.js';
 
 @Component({
   selector: 'app-form-vehicle',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, AlertComponent],
   templateUrl: './form-vehicle.component.html',
   styleUrls: ['./form-vehicle.component.css'],
 })
 export class FormVehicleComponent implements OnInit {
-  title: string = '';
-  description: string = '';
-
-  // Pour afficher les boutons radios de changement de status
+  title: string = 'Ajouter un nouveau véhicule de service';
+  description: string = 'Compléter les informations suivantes pour créer un nouveau véhicule';
+  // Pour afficher les boutons radios de changement de status pour la page modifier
   showStatusOptions: boolean = false;
-
   isSubmitted = false;
   private _serviceVehicle = inject(VehicleService);
   private _formBuilder = inject(FormBuilder);
@@ -45,6 +44,8 @@ export class FormVehicleComponent implements OnInit {
   private _modelService = inject(ModelService);
   models: Model[] = [];
   showModels: boolean = false;
+  @ViewChild('alertModal') alertModal!: AlertComponent;
+
 
   // Validation des champs du formulaires
   createVehicleForm = this._formBuilder.group({
@@ -61,16 +62,26 @@ export class FormVehicleComponent implements OnInit {
   });
 
   constructor(private activatedRoute: ActivatedRoute) {
-    // this.activatedRoute.url.subscribe(url => {
-    //   if (url.some(segment => segment.path === 'modifier-vehicule')) {
-    //     this.editMode();
-    //   } else {
-    //     this.addMode();
-    //   }
-    // });
+    this.activatedRoute.url.subscribe(url => {
+      if (url.some(segment => segment.path === 'modifier-vehicule')) {
+        this.title = 'Modifier un véhicule de service';
+        this.description = '';
+        this.showStatusOptions = true;
+      }
+    });
   }
 
+  pressSubmit() {
+    this.alertModal.show("Merci de remplir tous les champs", 404)
+    setTimeout(() => {
+      this.alertModal.hidden();
+    }, 5000);
+  }
+
+
+
   selectModel() {
+    this.isSubmitted = true;
     if (this.createVehicleForm.value.brand != null) {
       this._modelService.fetchModelsByBrand(+this.createVehicleForm.value.brand).subscribe({
         next: (models) => {
@@ -87,6 +98,9 @@ export class FormVehicleComponent implements OnInit {
       next: (response) => {
         this.brands = response.data;
       },
+      error: (error) => {
+
+      }
     });
 
     this._categoryService.fetCategories().subscribe({
@@ -102,11 +116,11 @@ export class FormVehicleComponent implements OnInit {
     });
   }
 
-  // Ajouter un message lorsque le formulaire n'est pas complet
-  onSubmit() {
-    this.isSubmitted = true;
 
-    if (this.createVehicleForm.valid) {
+  onSubmit() {
+    if (!this.createVehicleForm.valid) {
+      this.pressSubmit();
+    } else {
       const newVehicle: CreateVehicle = {
         carSeatNumber: +this.createVehicleForm.value.carSeatNumber!,
         registration: this.createVehicleForm.value.registration!,
@@ -142,6 +156,15 @@ export class FormVehicleComponent implements OnInit {
       // Logique d'ajout
     }
   }
+
+
+
+
+
+
+
+
+
 
   onCancel() {
     // Logique d'annulation
