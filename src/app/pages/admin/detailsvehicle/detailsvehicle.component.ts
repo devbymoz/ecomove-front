@@ -3,7 +3,12 @@ import { ButtonComponent } from '../../../components/buttons/button/button.compo
 import { NgClass } from '@angular/common';
 import { VehicleService } from '../../../services/vehicle.service.js';
 import { DetailsVehicle } from '../../../models/vehicles/details-vehicle.interface.js';
-import { ActivatedRoute, RedirectCommand, Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  RedirectCommand,
+  Router,
+  RouterLink,
+} from '@angular/router';
 import { AlertComponent } from '../../../components/alert/alert.component.js';
 import { Subscription } from 'rxjs';
 import { SpinnerComponent } from '../../../components/spinner/spinner.component.js';
@@ -11,7 +16,13 @@ import { SpinnerComponent } from '../../../components/spinner/spinner.component.
 @Component({
   selector: 'app-detailsvehicle',
   standalone: true,
-  imports: [ButtonComponent, NgClass, AlertComponent, SpinnerComponent],
+  imports: [
+    ButtonComponent,
+    NgClass,
+    AlertComponent,
+    SpinnerComponent,
+    RouterLink,
+  ],
   templateUrl: './detailsvehicle.component.html',
   styleUrl: './detailsvehicle.component.css',
 })
@@ -41,12 +52,10 @@ export class DetailsvehicleComponent implements OnInit, OnDestroy {
         error: (err) => {
           this.responseValid = false;
           setTimeout(() => {
-            
-              this.router.navigate(['page-erreur']);
-            
-          }, 3000);
-          console.log('Message : ', err.error.message);
-          console.log('Code :', err.error.codeStatus);
+            this.router.navigate(['admin/liste-de-vehicules']);
+          }, 5000);
+          // console.log('Message : ', err.error.message);
+          // console.log('Code :', err.error.codeStatus);
         },
       });
   }
@@ -65,18 +74,29 @@ export class DetailsvehicleComponent implements OnInit, OnDestroy {
   }
 
   removeVehicle(id: string): void {
-    this._fetRemoveVehicleSubscription = this._vehicleService
-      .fetchRemoveVehicle(id)
-      .subscribe({
-        next: (data) => {
-          console.log('Données reçues : ', data);
-        },
-        error: (err) => {
-          this.alertModal.show(err.error.message, err.error.codeStatus);
-          setTimeout(() => {
-            this.alertModal.hidden();
-          }, 5000);
-        },
-      });
+    const confirmRemove = confirm(
+      'Voulez-vous vraiment supprimer ce véhicule ?'
+    );
+    if (confirmRemove) {
+      this._fetRemoveVehicleSubscription = this._vehicleService
+        .fetchRemoveVehicle(id)
+        .subscribe({
+          next: (data) => {
+            this.alertModal.show(
+              'Le véhicule a bien été supprimé, vous allez être redirigé vers la liste des véhicules',
+              200
+            );
+            setTimeout(() => {
+              this.router.navigate(['admin/liste-de-vehicules']);
+            }, 5000);
+          },
+          error: (err) => {
+            this.alertModal.show(err.error.message, err.error.codeStatus);
+            setTimeout(() => {
+              this.alertModal.hidden();
+            }, 5000);
+          },
+        });
+    }
   }
 }
