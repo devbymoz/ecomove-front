@@ -312,13 +312,13 @@
   </div>
   <p *ngIf="!showStatusOptions">Statut: en service</p> -->
   <!-- 
-  <section class="flex justify-evenly">
-    <app-button [bgBtn]="'bg-app-primary'" (click)="onSubmit()">
-      <span message-button>Valider</span>
-    </app-button>
 
-    <app-button [bgBtn]="'bg-app-danger'" (click)="onCancel()">
-      <span message-button>Annuler</span>
-    </app-button>
-  </section> -->
+  @if (showStatusOptions) {
+    <h1>Modifier un véhicule de service</h1>
+    <p class="mb-6"></p>
+  } @else {
+    <h1>Ajouter un nouveau véhicule de service</h1>
+    <p class="mb-6">Compléter les informations suivantes pour créer un nouveau véhicule</p>
+  }
+    </section> -->
 </main>

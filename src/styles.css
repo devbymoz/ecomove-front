@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
@@ -28,7 +28,7 @@ main {
   padding: 38px 16px;
 }
 footer {
-  padding: 38px 38px 8px
+  padding: 38px 38px 8px;
 }
 header {
   padding: 0 16px;
@@ -41,15 +41,14 @@ header {
     padding: 0 32px;
   }
   footer {
-    padding: 32px 32px 12px
+    padding: 32px 32px 12px;
   }
 }
-
 
 /* Additional styles */
 a {
   color: var(--secondary-color);
-  text-decoration: underline;;
+  text-decoration: underline;
 }
 
 h1 {
@@ -136,10 +135,6 @@ input, select {
   @apply my-3;
 }
 
-label {
-  @apply mb-3;
-}
-
 .display-flex-center {
   @apply flex justify-center items-center;
 }
@@ -148,18 +143,27 @@ label {
   @apply flex justify-between items-center;
 }
 
-.btn-primary {
+button {
   @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
 }
 .box-card {
-  @apply rounded-lg border border-app-border mb-5 shadow-card max-w-[385px];
-}
-.base-button {
-  @apply rounded-lg px-4 py-2 shadow-lg font-normal text-white hover:opacity-90 min-w-[70px];
+  @apply rounded-lg border border-app-border shadow-card max-w-[385px];
 }
 
 .base-input {
-  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-100
+  @apply shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:outline-none;
+  
+/* Faut changer le nom de ce style pour ne pas modifier l'apparence des autre inputs */
+input {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 mt-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-100
+}
+
+select {
+  @apply mt-1 block shadow w-full pl-3 pr-10 py-2 border border-app-border focus:outline-none focus:ring-app-secondary focus:border-app-secondary rounded-md
+}
+
+form {
+  @apply flex flex-col gap-6
 }
 
 

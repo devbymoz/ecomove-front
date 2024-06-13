@@ -135,13 +135,15 @@ export class FormVehicleComponent implements OnInit {
           console.log('Code :', err.error.codeStatus);
         },
       });
+    if (this.showStatusOptions) {
+      // Logique de modification
+    } else {
+      // Logique d'ajout
     }
 
-    // if (this.showStatusOptions) {
 
-    // } else {
-
-    // }
+  onCancel() {
+    // Logique d'annulation
   }
 
   // immatriculation: string = '';
