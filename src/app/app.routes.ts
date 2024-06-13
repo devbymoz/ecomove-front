@@ -48,11 +48,11 @@ export const routes: Routes = [
         component: FormVehicleComponent,
       },
       {
-        path: 'modifier-vehicule',
+        path: 'modifier-vehicule/:id',
         component: FormVehicleComponent,
       },
       {
-        path: 'view-vehicle-list',
+        path: 'liste-de-vehicules',
         component: ViewVehicleListComponent,
       },
     ],

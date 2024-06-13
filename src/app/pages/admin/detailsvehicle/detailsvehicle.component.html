@@ -1,16 +1,20 @@
 @if (responseValid == undefined) { 
   <app-spinner></app-spinner>
 } @else if (!responseValid) {
-  <h1>Pas de contenu</h1>
+  <div class="flex flex-col items-center gap-y-[32px]">
+    <img class="max-w[550px] max-h[550px]" src="https://as2.ftcdn.net/v2/jpg/04/32/24/07/1000_F_432240759_09wXk4H6yyDzqJZvIkiBN0KWrCJhHyb7.jpg" alt="Image d'un véhicule cassé" height="550px" width="550px">
+    <h1>Le véhicule que vous recherchez semble introuvable, vous allez être redirigé vers la liste des véhicules</h1>
+  </div>
 }
 @else {
-<app-alert #alertModal></app-alert>
 <section>
+  <app-alert #alertModal></app-alert>
+
   <h1 class="mb-6 ">
     {{ detailsVehicle?.brandLabel }} {{ detailsVehicle?.modelLabel }}
   </h1>
   <img
-    class="max-w-full lg:max-w-[500px]"
+    class="max-w-full lg:max-w-[600px]"
     src="{{ detailsVehicle?.photo }}"
     alt="Photo de la voiture"
     height="100%"
@@ -53,11 +57,11 @@
     </tbody>
   </table>
 
-  <a routerLink="/reservation-vehicule">Liste des réservations</a>
-
+  <a routerLink="/admin/vehicle-reservations">Liste des réservations</a>
+  
   <div class="mt-6">
-    <button >Modifier</button>
-    <button (click)="removeVehicle(id)">Supprimer</button>
+    <button  class="bg-app-primary mr-6"><a routerLink="/admin/modifier-vehicule/{{ detailsVehicle?.vehicleId }}">Modifier</a></button>
+    <button class="bg-app-danger" (click)="removeVehicle(id)">Supprimer</button>
   </div>
 </section>
 }

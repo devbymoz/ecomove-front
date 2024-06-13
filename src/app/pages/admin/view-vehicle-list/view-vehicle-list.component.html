@@ -1,4 +1,4 @@
-<main class="gap-3 mt-[70px]">
+<section class="gap3">
   <h1 class="mb-6">Liste des véhicules de service</h1>
 
   <p>Rechercher un nouveau véhicule</p>
@@ -18,7 +18,7 @@
     <button class="bg-app-primary">Chercher</button>
   </div>
 
-  <section class="flex flex-wrap gap-x-6">
+  <section class="flex flex-wrap gap-6 my-8">
     @for (vehicle of vehicles; track $index) {
       <app-vehicle-list
       [vehicleId]="vehicle.vehicleId"
@@ -33,4 +33,4 @@
   </section>
 
   <app-number-page></app-number-page>
-</main>
+</section>
