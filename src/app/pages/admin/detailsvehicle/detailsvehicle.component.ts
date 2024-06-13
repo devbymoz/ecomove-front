@@ -32,7 +32,7 @@ export class DetailsvehicleComponent implements OnInit, OnDestroy {
     });
 
     this._fetDetailsVehicleSubscription = this._vehicleService
-      .fetDetailsVehicle(this.id)
+      .fetchDetailsVehicle(this.id)
       .subscribe({
         next: (response) => {
           this._detailsVehicle = response.data;

@@ -1,16 +1,14 @@
 <div class="max-w-[385px] bg-white p-5 space-y-4">
-  <div class="text-xl font-medium text-black">Voiture ID :</div>
+  <p class="text-xl font-medium text-black">Voiture ID : {{ vehicleId }}</p>
   <!-- {{ carId }} -->
   <img
-    (click)="showVehicleDetails('12')"
+    (click)="showVehicleDetails(vehicleId)"
     class="w-full h-48 object-cover cursor-pointer"
-    src="assets/vehicles/Toyota-Aygo 2.svg"
+    src="{{ photo }}"
     alt="Car Image Toyota"
   />
   <div class="text-black space-y-3">
-    <p>Immatriculation :</p>
-    <!-- {{ immatriculation }} -->
-    <p>Marque :</p>
-    <!-- {{ marque }} -->
+    <p>{{ registration }} :</p>
+    <p>{{ brand }} :</p>
   </div>
 </div>

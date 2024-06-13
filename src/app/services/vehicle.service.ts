@@ -18,7 +18,7 @@ export class VehicleService {
   }
 
   // Permet de récupérer un véhicule via son Id.
-  fetDetailsVehicle(id: string): Observable<Response> {
+  fetchDetailsVehicle(id: string): Observable<Response> {
     return this._http.get<Response>(this.url + id);
   }
 

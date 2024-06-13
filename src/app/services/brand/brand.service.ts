@@ -12,7 +12,7 @@ export class BrandService {
   private _http = inject(HttpClient);
 
   // Permet de récupérer toutes les marques
-  fetBrands(): Observable<Response> {
+  fetchBrands(): Observable<Response> {
     return this._http.get<Response>(this.url);
   }
 }
