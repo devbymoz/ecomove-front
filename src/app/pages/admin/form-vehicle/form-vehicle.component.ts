@@ -135,12 +135,13 @@ export class FormVehicleComponent implements OnInit {
           console.log('Code :', err.error.codeStatus);
         },
       });
+    }
     if (this.showStatusOptions) {
       // Logique de modification
     } else {
       // Logique d'ajout
     }
-
+  }
 
   onCancel() {
     // Logique d'annulation
@@ -188,6 +189,4 @@ export class FormVehicleComponent implements OnInit {
   //   this.co2 = '';
   //   this.status = 'en service';
   // }
-
-  onCancel() {}
 }
