@@ -3,7 +3,6 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { ReservationVehicleListComponent } from './pages/admin/reservation-vehicle-list/reservation-vehicle-list.component';
 import { DetailsvehicleComponent } from './pages/admin/detailsvehicle/detailsvehicle.component.js';
 import { HomeComponent } from './pages/home/home.component';
-import { AppComponent } from './app.component';
 import { ViewVehicleListComponent } from './pages/admin/view-vehicle-list/view-vehicle-list.component';
 import { DetailsCarpoolingComponent } from './pages/colab/details-carpooling/details-carpooling.component';
 import { DetailsReservationCarpoolingComponent } from './pages/colab/details-reservation-carpooling/details-reservation-carpooling.component';
@@ -17,23 +16,28 @@ import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
 import { SearchVehicleComponent } from './pages/colab/search-vehicle/search-vehicle.component';
 import { DetailsReservationVehicleComponent } from './pages/colab/details-reservation-vehicle/details-reservation-vehicle.component';
 import { PostCarpoolingAnnouncementComponent } from './pages/colab/post-carpooling-announcement/post-carpooling-announcement.component';
-import { ChangeCarpoolingComponent } from './pages/colab/change-carpooling/change-carpooling.component';
-import { adminGuard, loginGuard } from './guards/admin.guard';
+import { AuthGuard, AdminGuard } from './guards/admin.guard';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
+  // {
+  //   path: '',
+  //   component: AppComponent,
+  // canActivate: [AuthGuard],
+  // },
   {
     path: 'login',
     component: LoginPageComponent,
-    canActivate: [loginGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'admin',
-    //canActivate: [adminGuard],
+    // canActivate: [AdminGuard],
     children: [
       {
         path: 'vehicle-reservations',
         component: ReservationVehicleListComponent,
-        canActivate: [adminGuard],
+        // canActivate: [AdminGuard],
       },
       {
         path: 'details-vehicule/:id',
@@ -51,50 +55,50 @@ export const routes: Routes = [
         path: 'view-vehicle-list',
         component: ViewVehicleListComponent,
       },
-    ]
+    ],
   },
   {
     path: 'colab',
     children: [
       {
         path: 'chercher-un-vehicule',
-        component: SearchVehicleComponent
+        component: SearchVehicleComponent,
       },
       {
         path: 'details-reservation-vehicule',
-        component: DetailsReservationVehicleComponent
+        component: DetailsReservationVehicleComponent,
       },
       {
-        path: 'post-carpooling-announcement',
-        component: PostCarpoolingAnnouncementComponent 
+        path: 'creer-covoiturage',
+        component: PostCarpoolingAnnouncementComponent,
       },
       {
         path: 'details-reservation-carpooling',
-        component: DetailsReservationCarpoolingComponent 
+        component: DetailsReservationCarpoolingComponent,
       },
       {
         path: 'details-carpooling',
-        component: DetailsCarpoolingComponent 
+        component: DetailsCarpoolingComponent,
       },
       {
         path: 'announcement-carpooling-organizer',
-        component: AnnouncementCarpoolingOrganizerComponent 
+        component: AnnouncementCarpoolingOrganizerComponent,
       },
       {
-        path: 'list-reserved-vehicles',
-        component: ListReservedVehiclesComponent 
+        path: 'reservations-vehicules',
+        component: ListReservedVehiclesComponent,
       },
       {
         path: 'organizer-carpool-list',
-        component: OrganizerCarpoolListComponent 
+        component: OrganizerCarpoolListComponent,
       },
       {
-        path: 'search-carpool',
-        component: SearchCarpoolComponent 
+        path: 'chercher-covoiturage',
+        component: SearchCarpoolComponent,
       },
       {
         path: 'carpool-reservation-history',
-        component: CarpoolReservationHistoryComponent 
+        component: CarpoolReservationHistoryComponent,
       },
       {
         path: 'post-carpooling-announcement',
@@ -113,11 +117,11 @@ export const routes: Routes = [
         component: ListReservedVehiclesComponent,
       },
       {
-        path: 'organizer-carpool-list',
+        path: 'mes-covoiturages',
         component: OrganizerCarpoolListComponent,
       },
       {
-        path: 'search-carpool',
+        path: 'chercher-covoiturage',
         component: SearchCarpoolComponent,
       },
       {
