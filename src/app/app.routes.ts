@@ -28,7 +28,7 @@ export const routes: Routes = [
   },
   {
     path: 'admin',
-    canActivate: [adminGuard],
+    //canActivate: [adminGuard],
     children: [
       {
         path: 'vehicle-reservations',
@@ -40,7 +40,7 @@ export const routes: Routes = [
         component: DetailsvehicleComponent,
       },
       {
-        path: 'q',
+        path: 'ajouter-vehicule',
         component: FormVehicleComponent,
       },
       {
