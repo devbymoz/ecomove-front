@@ -3,3 +3,13 @@ section {
   /* background-attachment: fixed; */
   background-size: contain;
 }
+
+.invalid {
+  border: 2px solid red;
+  background-color: #fee2e2;
+}
+
+.valid {
+  border: 2px solid green;
+  background-color: #ecfccb;
+}
