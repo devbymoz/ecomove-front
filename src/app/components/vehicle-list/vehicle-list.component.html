@@ -1,5 +1,4 @@
 <div class="max-w-[385px] bg-white space-y-4">
-  <p class="text-xl font-medium text-black">Voiture ID : {{ vehicleId }}</p>
   <!-- {{ carId }} -->
   <img
     (click)="showVehicleDetails(vehicleId)"
@@ -8,7 +7,8 @@
     alt="Car Image Toyota"
   />
   <div class="text-black space-y-3">
-    <p>{{ registration }} :</p>
-    <p>{{ brand }} :</p>
+    <p>Immatriculation : {{ registration }}</p>
+    <p>Marque : {{ brand }}</p>
+    <p>Modèle : {{model}}</p>
   </div>
 </div>

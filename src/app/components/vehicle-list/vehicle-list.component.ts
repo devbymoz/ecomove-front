@@ -14,6 +14,7 @@ export class VehicleListComponent {
   @Input() registration = "";
   @Input() brand = "";
   @Input() photo = "";
+  @Input() model ="";
 
 
   showVehicleDetails(id: string) {
