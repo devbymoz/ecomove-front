@@ -16,6 +16,7 @@ import { FormVehicleComponent } from './pages/admin/form-vehicle/form-vehicle.co
 import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
 import { SearchVehicleComponent } from './pages/colab/search-vehicle/search-vehicle.component';
 import { DetailsReservationVehicleComponent } from './pages/colab/details-reservation-vehicle/details-reservation-vehicle.component';
+import { ChangeCarpoolingComponent } from './pages/colab/change-carpooling/change-carpooling.component';
 import { adminGuard, loginGuard } from './guards/admin.guard';
 
 export const routes: Routes = [
@@ -93,6 +94,10 @@ export const routes: Routes = [
       {
         path: 'modification-reservation-vehicule',
         component: DetailsReservationVehicleComponent
+      },
+      {
+        path: 'modification-annonce-covoiturage',
+        component: ChangeCarpoolingComponent
       }
     ]
   },
