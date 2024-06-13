@@ -3,15 +3,27 @@
   top: 16px;
 }
 
+.alertModal.success {
+  background-color: var(--primary-color);
+}
+.alertModal.alert {
+  background-color: var(--alert-color);
+}
+.alertModal.error {
+  background-color: var(--danger-color)
+}
+
 .alertModal.show { 
-  display: inline-block;
-  position: sticky;
-  animation:slide-in-top .8s cubic-bezier(.25,.46,.45,.94) both
+  display: block;
+  position: fixed;
+  animation:slide-in-top .3s cubic-bezier(.25,.46,.45,.94) both
 }
 
+/* Ne fonctionne pas encore */
 .alertModal.hidden {
-  animation:slide-out-top .7s cubic-bezier(.55,.085,.68,.53) both
+  display: none;
+  animation:slide-out-top .5s cubic-bezier(.55,.085,.68,.53) both
 }
 
-@keyframes slide-in-top{0%{transform:translateY(-1000px);opacity:0}100%{transform:translateY(0);opacity:1}}
-@keyframes slide-out-top{0%{transform:translateY(0);opacity:1}100%{transform:translateY(-1000px);opacity:0}}
+@keyframes slide-in-top{0%{transform:translateX(-1000px);opacity:0}100%{transform:translateX(0);opacity:1}}
+@keyframes slide-out-top{0%{transform:translateX(0);opacity:1}100%{transform:translateX(-1000px);opacity:0}}

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TableVehicleComponent } from './table-vehicle.component';
+import { ErrorsPageComponent } from './errors-page.component';
 
-describe('TableVehicleComponent', () => {
-  let component: TableVehicleComponent;
-  let fixture: ComponentFixture<TableVehicleComponent>;
+describe('ErrorsPageComponent', () => {
+  let component: ErrorsPageComponent;
+  let fixture: ComponentFixture<ErrorsPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TableVehicleComponent]
+      imports: [ErrorsPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TableVehicleComponent);
+    fixture = TestBed.createComponent(ErrorsPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

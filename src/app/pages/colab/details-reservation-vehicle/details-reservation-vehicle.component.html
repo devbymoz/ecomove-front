@@ -1,14 +1,27 @@
-<h1>Reserver votre :</h1>
-<h2 class="text-app-secondary text-2xl font-medium">Nissan Yaris</h2>
-<img src="/assets/vehicles/Toyota-Aygo 2.svg">
-<h3>Description</h3>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates error repellat reiciendis perspiciatis expedita? Sequi, ad laboriosam. Doloremque, eius natus alias quod soluta, enim modi, ratione nemo eos architecto corporis?</p>
-<h3>Plus de détails</h3>
-<!-- ajouter composant table -->
- <h3>Réserver</h3>
- <h4>Date</h4>
- <app-calendar></app-calendar>
- <app-time-selector></app-time-selector>
- <button >Réserver</button>
-
-
+<main class="grid-container">
+  <div class="header mb-4">
+    @if (isModification) {
+      <h1>Modifier votre réservation :</h1>
+      <h2 class="text-app-secondary text-2xl font-medium">Nissan Yaris</h2>
+    } @else {
+      <h1>Réserver votre :</h1>
+      <h2 class="text-app-secondary text-2xl font-medium">Nissan Yaris</h2>
+    }
+  </div>
+  <div class="description mb-4">
+    <img src="/assets/vehicles/Toyota-Aygo 2.svg" alt="Nissan Yaris">
+    <h3>Description</h3>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates error repellat reiciendis perspiciatis expedita? Sequi, ad laboriosam. Doloremque, eius natus alias quod soluta, enim modi, ratione nemo eos architecto corporis?</p>
+  </div>
+  <div class="details mb-4">
+    <h3>Plus de détails</h3>
+    <!-- ajouter table vehicle -->
+  </div>
+  <div class="reservation flex justify-center">
+    @if (isModification) {
+      <app-reserver class="w-80" dateTitle="Modifier la date"></app-reserver>
+    } @else {
+      <app-reserver class="w-80" dateTitle="Date"></app-reserver>
+    }
+  </div>
+</main>
