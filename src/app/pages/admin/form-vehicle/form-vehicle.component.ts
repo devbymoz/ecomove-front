@@ -94,7 +94,7 @@ export class FormVehicleComponent implements OnInit {
 
   // Ajouter les cas d'erreurs et les unsubscribe
   ngOnInit(): void {
-    this._brandService.fetBrands().subscribe({
+    this._brandService.fetchBrands().subscribe({
       next: (response) => {
         this.brands = response.data;
       },
@@ -103,13 +103,13 @@ export class FormVehicleComponent implements OnInit {
       }
     });
 
-    this._categoryService.fetCategories().subscribe({
+    this._categoryService.fetchCategories().subscribe({
       next: (response) => {
         this.categories = response.data;
       },
     });
 
-    this._motorizationService.fetMotorizations().subscribe({
+    this._motorizationService.fetchMotorizations().subscribe({
       next: (response) => {
         this.motorizations = response.data;
       },

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +10,12 @@ import { Router } from '@angular/router';
 })
 export class VehicleListComponent {
   router = inject(Router);
+  @Input() vehicleId = "";
+  @Input() registration = "";
+  @Input() brand = "";
+  @Input() photo = "";
+
+
   showVehicleDetails(id: string) {
     this.router.navigate(['admin/details-vehicule', id]);
   }

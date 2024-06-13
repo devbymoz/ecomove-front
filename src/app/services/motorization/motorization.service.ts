@@ -12,7 +12,7 @@ export class MotorizationService {
   private _http = inject(HttpClient);
 
   // Permet de récupérer un véhicule via son Id.
-  fetMotorizations(): Observable<Response> {
+  fetchMotorizations(): Observable<Response> {
     return this._http.get<Response>(this.url);
   }
 

@@ -12,7 +12,7 @@ export class CategoryService {
   private _http = inject(HttpClient);
 
   // Permet de récupérer toutes les categories
-  fetCategories(): Observable<Response> {
+  fetchCategories(): Observable<Response> {
     return this._http.get<Response>(this.url);
   }
 }

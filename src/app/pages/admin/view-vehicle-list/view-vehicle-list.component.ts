@@ -20,7 +20,6 @@ export class ViewVehicleListComponent implements OnInit {
     this._vehicleService.fetchListVehicle().subscribe({
       next: (response) => {
         this.vehicles = response.data;
-        console.log(response)
       },
       error: (err) => {
         console.log('Erreur lors de la récupération des véhicules :', err);
