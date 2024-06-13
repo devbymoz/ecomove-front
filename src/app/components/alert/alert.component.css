@@ -16,6 +16,7 @@
 .alertModal.show { 
   display: block;
   position: fixed;
+  width: inherit;
   animation:slide-in-top .3s cubic-bezier(.25,.46,.45,.94) both
 }
 

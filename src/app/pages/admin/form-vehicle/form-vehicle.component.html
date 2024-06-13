@@ -1,4 +1,5 @@
-<main class="flex flex-col gap-2">
+<main class="flex flex-col lg:max-w-[50%] mx-auto my-0 relative">
+  <app-alert #alertModal></app-alert>
   <h1>{{ title }}</h1>
   <p class="mb-6">{{ description }}</p>
 
@@ -26,14 +27,14 @@
         "
         required
       />
+      @if (createVehicleForm.get('registration')?.invalid &&
+      (createVehicleForm.get('registration')?.dirty ||
+      createVehicleForm.get('registration')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Veuillez entre une Immatriculation valide.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('registration')?.invalid &&
-    (createVehicleForm.get('registration')?.dirty ||
-    createVehicleForm.get('registration')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Veuillez entre une Immatriculation valide.</span
-    >
-    }
 
     <div class="form-group">
       <label for="brand">Marque</label>
@@ -62,14 +63,15 @@
         <option value="{{ brand.brandId }}">{{ brand.brandLabel }}</option>
         }
       </select>
+      @if (createVehicleForm.get('brand')?.invalid &&
+      (createVehicleForm.get('brand')?.dirty ||
+      createVehicleForm.get('brand')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Veuillez séléctionner une marque.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('brand')?.invalid &&
-    (createVehicleForm.get('brand')?.dirty ||
-    createVehicleForm.get('brand')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Veuillez séléctionner une marque.</span
-    >
-    } @if (showModels) {
+    @if (showModels) {
     <div class="form-group">
       <label for="model">Model</label>
       <select
@@ -94,14 +96,15 @@
         <option value="{{ model.brandId }}">{{ model.modelLabel }}</option>
         }
       </select>
+      @if (createVehicleForm.get('model')?.invalid &&
+      (createVehicleForm.get('model')?.dirty ||
+      createVehicleForm.get('model')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Veuillez séléctionner un modèle.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('model')?.invalid &&
-    (createVehicleForm.get('model')?.dirty ||
-    createVehicleForm.get('model')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Veuillez séléctionner un modèle.</span
-    >
-    } }
+    }
 
     <div class="form-group">
       <label for="model">Catégorie</label>
@@ -131,14 +134,14 @@
         </option>
         }
       </select>
+      @if (createVehicleForm.get('category')?.invalid &&
+      (createVehicleForm.get('category')?.dirty ||
+      createVehicleForm.get('category')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Veuillez séléctionner une catégorie.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('category')?.invalid &&
-    (createVehicleForm.get('category')?.dirty ||
-    createVehicleForm.get('category')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Veuillez séléctionner une catégorie.</span
-    >
-    }
 
     <div class="form-group">
       <label for="photo">Photo</label>
@@ -161,14 +164,14 @@
         "
         required
       />
+      @if (createVehicleForm.get('photo')?.invalid &&
+      (createVehicleForm.get('photo')?.dirty ||
+      createVehicleForm.get('photo')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Veuillez entrer un lien valide.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('photo')?.invalid &&
-    (createVehicleForm.get('photo')?.dirty ||
-    createVehicleForm.get('photo')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Veuillez entrer un lien valide.</span
-    >
-    }
 
     <div class="form-group">
       <label for="carSeatNumber">Nombre de places</label>
@@ -196,14 +199,14 @@
         <option value="{{ carSeatNumber }}">{{ carSeatNumber }}</option>
         }
       </select>
+      @if (createVehicleForm.get('carSeatNumber')?.invalid &&
+      (createVehicleForm.get('carSeatNumber')?.dirty ||
+      createVehicleForm.get('carSeatNumber')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Séléctionnez le nombre de place.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('carSeatNumber')?.invalid &&
-    (createVehicleForm.get('carSeatNumber')?.dirty ||
-    createVehicleForm.get('carSeatNumber')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Séléctionnez le nombre de place.</span
-    >
-    }
 
     <div class="form-group">
       <label for="motorization">Motorisation</label>
@@ -233,14 +236,14 @@
         </option>
         }
       </select>
+      @if (createVehicleForm.get('motorization')?.invalid &&
+      (createVehicleForm.get('motorization')?.dirty ||
+      createVehicleForm.get('motorization')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Séléctionnez la motorisation du véhicule.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('motorization')?.invalid &&
-    (createVehicleForm.get('motorization')?.dirty ||
-    createVehicleForm.get('motorization')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Séléctionnez la motorisation du véhicule.</span
-    >
-    }
 
     <div class="form-group">
       <label for="cO2emission">CO2/km</label>
@@ -263,14 +266,14 @@
         "
         required
       />
+      @if (createVehicleForm.get('cO2emission')?.invalid &&
+      (createVehicleForm.get('cO2emission')?.dirty ||
+      createVehicleForm.get('cO2emission')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Entrez le Co2 du véhicule.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('cO2emission')?.invalid &&
-    (createVehicleForm.get('cO2emission')?.dirty ||
-    createVehicleForm.get('cO2emission')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Entrez le Co2 du véhicule.</span
-    >
-    }
 
     <div class="form-group">
       <label for="consumption">Consommation</label>
@@ -293,32 +296,28 @@
         "
         required
       />
+      @if (createVehicleForm.get('consumption')?.invalid &&
+      (createVehicleForm.get('consumption')?.dirty ||
+      createVehicleForm.get('consumption')?.touched || isSubmitted)) {
+      <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+        Entrez la consommation du véhicule.</span
+      >
+      }
     </div>
-    @if (createVehicleForm.get('consumption')?.invalid &&
-    (createVehicleForm.get('consumption')?.dirty ||
-    createVehicleForm.get('consumption')?.touched || isSubmitted)) {
-    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
-      Entrez la consommation du véhicule.</span
+
+    <div *ngIf="showStatusOptions" class="flex flex-col gap-2">
+      <p>Statut:</p>
+      <!-- <app-radiobuttons [(selectedValue)]="status"></app-radiobuttons> -->
+    </div>
+
+
+    <!-- <p>Form Status: {{ createVehicleForm.status }}</p> -->
+
+    <button
+      class="bg-app-primary"
+      type="submit"
     >
-    }
-
-    <p>Form Status: {{ createVehicleForm.status }}</p>
-    <button type="submit" [disabled]="!createVehicleForm.valid">Submit</button>
+      Submit
+    </button>
   </form>
-
-  <!-- <div *ngIf="showStatusOptions" class="flex flex-col gap-2">
-    <p>Statut:</p>
-    <app-radiobuttons [(selectedValue)]="status"></app-radiobuttons>
-  </div>
-  <p *ngIf="!showStatusOptions">Statut: en service</p> -->
-  <!-- 
-
-  @if (showStatusOptions) {
-    <h1>Modifier un véhicule de service</h1>
-    <p class="mb-6"></p>
-  } @else {
-    <h1>Ajouter un nouveau véhicule de service</h1>
-    <p class="mb-6">Compléter les informations suivantes pour créer un nouveau véhicule</p>
-  }
-    </section> -->
 </main>

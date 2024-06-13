@@ -1,28 +1,26 @@
-<main class="flex flex-col gap-6">
+<main class="flex flex-col gap-6 mt-[70px]">
+  <h1>Faire un covoiturage</h1>
 
-    <h1>Faire un covoiturage</h1>
+  <p>Compléter les informations suivantes pour créer un covoiturage</p>
 
-    <p>Compléter les informations suivantes pour créer un covoiturage</p>
+  <div class="text-xs text-app-text">
+    Sélectionner un véhicule que vous avez réservé
+  </div>
 
-    <div class="text-xs text-app-text">Sélectionner un véhicule que vous avez réservé</div>
-    
-    <form class="flex flex-col gap-6">
+  <form class="flex flex-col gap-6">
+    <select id="select vehicle">
+      <option value="">Select</option>
+    </select>
 
-        <select id="select vehicle">
-            <option value="">Select</option>
-        </select>
+    <label for="date">Date</label>
+    <input type="text" id="date" placeholder="21 Mars" />
 
-        <label for="date">Date</label>
-        <input type="text" id="date" placeholder="21 Mars">
+    <label for="departure">Lieu de départ</label>
+    <input type="text" id="departure" placeholder="Montpellier" />
 
-        <label for="departure">Lieu de départ</label>
-        <input type="text" id="departure" placeholder="Montpellier">
+    <label for="arrival">Lieu d’arriver</label>
+    <input type="text" id="arrival" placeholder="Paris" />
+  </form>
 
-        <label for="arrival">Lieu d’arriver</label>
-        <input type="text" id="arrival" placeholder="Paris">
-    </form>
-
-    <button class="bg-app-primary">Publier</button>
-
+  <button class="bg-app-primary">Publier</button>
 </main>
-
