@@ -2,32 +2,53 @@
   <h1>Chercher un véhicule</h1>
   <p>Lorem ipsum dolor sit amet.</p>
   <section class="border-b pb-6">
-    <app-label-input
-      label="Marque"
-      [value]="marque"
-      placeholder="Marque"
-    ></app-label-input>
-    <app-label-input
-      label="Modèle"
-      [value]="modele"
-      placeholder="Modèle"
-    ></app-label-input>
-    <app-selector-form
-      label="Nombre de places"
-      [options]="['2', '4', '5']"
-      [value]="nombreDePlaces"
-      placeholder="Nombre de places"
-    ></app-selector-form>
-    <app-selector-form
-      label="Motorisation"
-      [options]="['Hybride', 'Essence', 'Diesel']"
-      [value]="motorisation"
-      placeholder="Motorisation"
-    ></app-selector-form>
+    <div>
+      <label for="marque">Marque</label>
+      <input
+        type="text"
+        id="marque"
+        name="marque"
+        [(ngModel)]="marque"
+        placeholder="Marque"
+      />
+    </div>
+    <div>
+      <label for="modele">Modèle</label>
+      <input
+        type="text"
+        id="modele"
+        name="modele"
+        [(ngModel)]="modele"
+        placeholder="Modèle"
+      />
+    </div>
+    <div>
+      <label for="nombreDePlaces">Nombre de places</label>
+      <select
+        id="nombreDePlaces"
+        name="nombreDePlaces"
+        [(ngModel)]="nombreDePlaces"
+      >
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+    <div>
+      <label for="motorisation">Motorisation</label>
+      <select
+        id="motorisation"
+        name="motorisation"
+        [(ngModel)]="motorisation"
+      >
+        <option value="Hybride">Hybride</option>
+        <option value="Essence">Essence</option>
+        <option value="Diesel">Diesel</option>
+      </select>
+    </div>    
     <app-calendar class=""></app-calendar>
     <button>Chercher</button>
   </section>
-
   <section class="flex flex-col gap-6">
     <div class="flex justify-between">
       <p>154 voitures</p>
