@@ -94,6 +94,13 @@ h3 {
   background-color: #eee;
 }
 
+input, select {
+  border: 1px solid var(--border-color);
+  padding: 9px;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 12px;
+}
 
 /* Pagination */
 .pagination-item {
@@ -157,4 +164,19 @@ select {
 
 form {
   @apply flex flex-col gap-6
+}
+
+
+.registration-plate {
+  border-left: 15px solid #2c3fa0; 
+}
+
+.invalid {
+  border: 2px solid red;
+  background-color: #fee2e2;
+}
+
+.valid {
+  border: 2px solid green;
+  background-color: #ecfccb;
 }

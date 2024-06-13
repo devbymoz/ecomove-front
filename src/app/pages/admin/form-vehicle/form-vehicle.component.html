@@ -1,4 +1,318 @@
 <main class="flex flex-col gap-2">
+  <h1>{{ title }}</h1>
+  <p class="mb-6">{{ description }}</p>
+
+  <form [formGroup]="createVehicleForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="registration">Immatriculation</label>
+      <input
+        type="text"
+        id="registration"
+        name="registration"
+        class="base-input registration-plate"
+        placeholder="AA-123-BB"
+        formControlName="registration"
+        [class.invalid]="
+          createVehicleForm.get('registration')?.invalid &&
+          (createVehicleForm.get('registration')?.dirty ||
+            createVehicleForm.get('registration')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('registration')?.valid &&
+          (createVehicleForm.get('registration')?.dirty ||
+            createVehicleForm.get('registration')?.touched ||
+            isSubmitted)
+        "
+        required
+      />
+    </div>
+    @if (createVehicleForm.get('registration')?.invalid &&
+    (createVehicleForm.get('registration')?.dirty ||
+    createVehicleForm.get('registration')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Veuillez entre une Immatriculation valide.</span
+    >
+    }
+
+    <div class="form-group">
+      <label for="brand">Marque</label>
+      <select
+        name="brand"
+        formControlName="brand"
+        [class.invalid]="
+          createVehicleForm.get('brand')?.invalid &&
+          (createVehicleForm.get('brand')?.dirty ||
+            createVehicleForm.get('brand')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('brand')?.valid &&
+          (createVehicleForm.get('brand')?.dirty ||
+            createVehicleForm.get('brand')?.touched ||
+            isSubmitted)
+        "
+        (change)="selectModel()"
+        required
+      >
+        <option value="" disabled selected hidden>
+          Sélectionnez la marque
+        </option>
+        @for (brand of brands; track $index) {
+        <option value="{{ brand.brandId }}">{{ brand.brandLabel }}</option>
+        }
+      </select>
+    </div>
+    @if (createVehicleForm.get('brand')?.invalid &&
+    (createVehicleForm.get('brand')?.dirty ||
+    createVehicleForm.get('brand')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Veuillez séléctionner une marque.</span
+    >
+    } @if (showModels) {
+    <div class="form-group">
+      <label for="model">Model</label>
+      <select
+        name="model"
+        formControlName="model"
+        [class.invalid]="
+          createVehicleForm.get('model')?.invalid &&
+          (createVehicleForm.get('model')?.dirty ||
+            createVehicleForm.get('model')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('model')?.valid &&
+          (createVehicleForm.get('model')?.dirty ||
+            createVehicleForm.get('model')?.touched ||
+            isSubmitted)
+        "
+        required
+      >
+        <option value="" disabled selected hidden>Séléctionnez un model</option>
+        @for (model of models; track $index) {
+        <option value="{{ model.brandId }}">{{ model.modelLabel }}</option>
+        }
+      </select>
+    </div>
+    @if (createVehicleForm.get('model')?.invalid &&
+    (createVehicleForm.get('model')?.dirty ||
+    createVehicleForm.get('model')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Veuillez séléctionner un modèle.</span
+    >
+    } }
+
+    <div class="form-group">
+      <label for="model">Catégorie</label>
+      <select
+        name="category"
+        formControlName="category"
+        [class.invalid]="
+          createVehicleForm.get('category')?.invalid &&
+          (createVehicleForm.get('category')?.dirty ||
+            createVehicleForm.get('category')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('category')?.valid &&
+          (createVehicleForm.get('category')?.dirty ||
+            createVehicleForm.get('category')?.touched ||
+            isSubmitted)
+        "
+        required
+      >
+        <option value="" disabled selected hidden>
+          Séléctionnez une catégorie
+        </option>
+        @for (category of categories; track $index) {
+        <option value="{{ category.categoryId }}">
+          {{ category.categoryLabel }}
+        </option>
+        }
+      </select>
+    </div>
+    @if (createVehicleForm.get('category')?.invalid &&
+    (createVehicleForm.get('category')?.dirty ||
+    createVehicleForm.get('category')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Veuillez séléctionner une catégorie.</span
+    >
+    }
+
+    <div class="form-group">
+      <label for="photo">Photo</label>
+      <input
+        type="text"
+        name="photo"
+        placeholder="https://image.com/308.jpg"
+        formControlName="photo"
+        [class.invalid]="
+          createVehicleForm.get('photo')?.invalid &&
+          (createVehicleForm.get('photo')?.dirty ||
+            createVehicleForm.get('photo')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('photo')?.valid &&
+          (createVehicleForm.get('photo')?.dirty ||
+            createVehicleForm.get('photo')?.touched ||
+            isSubmitted)
+        "
+        required
+      />
+    </div>
+    @if (createVehicleForm.get('photo')?.invalid &&
+    (createVehicleForm.get('photo')?.dirty ||
+    createVehicleForm.get('photo')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Veuillez entrer un lien valide.</span
+    >
+    }
+
+    <div class="form-group">
+      <label for="carSeatNumber">Nombre de places</label>
+      <select
+        name="carSeatNumber"
+        formControlName="carSeatNumber"
+        [class.invalid]="
+          createVehicleForm.get('carSeatNumber')?.invalid &&
+          (createVehicleForm.get('carSeatNumber')?.dirty ||
+            createVehicleForm.get('carSeatNumber')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('carSeatNumber')?.valid &&
+          (createVehicleForm.get('carSeatNumber')?.dirty ||
+            createVehicleForm.get('carSeatNumber')?.touched ||
+            isSubmitted)
+        "
+        required
+      >
+        <option value="" disabled selected hidden>
+          Séléctionnez le nombre de place
+        </option>
+        @for (carSeatNumber of carSeatNumbers; track carSeatNumber) {
+        <option value="{{ carSeatNumber }}">{{ carSeatNumber }}</option>
+        }
+      </select>
+    </div>
+    @if (createVehicleForm.get('carSeatNumber')?.invalid &&
+    (createVehicleForm.get('carSeatNumber')?.dirty ||
+    createVehicleForm.get('carSeatNumber')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Séléctionnez le nombre de place.</span
+    >
+    }
+
+    <div class="form-group">
+      <label for="motorization">Motorisation</label>
+      <select
+        name="motorization"
+        formControlName="motorization"
+        [class.invalid]="
+          createVehicleForm.get('motorization')?.invalid &&
+          (createVehicleForm.get('motorization')?.dirty ||
+            createVehicleForm.get('motorization')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('motorization')?.valid &&
+          (createVehicleForm.get('motorization')?.dirty ||
+            createVehicleForm.get('motorization')?.touched ||
+            isSubmitted)
+        "
+        required
+      >
+        <option value="" disabled selected hidden>
+          Séléctionnez une motorisation
+        </option>
+        @for (motorization of motorizations; track $index) {
+        <option value="{{ motorization.motorizationId }}">
+          {{ motorization.motorizationLabel }}
+        </option>
+        }
+      </select>
+    </div>
+    @if (createVehicleForm.get('motorization')?.invalid &&
+    (createVehicleForm.get('motorization')?.dirty ||
+    createVehicleForm.get('motorization')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Séléctionnez la motorisation du véhicule.</span
+    >
+    }
+
+    <div class="form-group">
+      <label for="cO2emission">CO2/km</label>
+      <input
+        type="number"
+        name="cO2emission"
+        placeholder="95"
+        formControlName="cO2emission"
+        [class.invalid]="
+          createVehicleForm.get('cO2emission')?.invalid &&
+          (createVehicleForm.get('cO2emission')?.dirty ||
+            createVehicleForm.get('cO2emission')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('cO2emission')?.valid &&
+          (createVehicleForm.get('cO2emission')?.dirty ||
+            createVehicleForm.get('cO2emission')?.touched ||
+            isSubmitted)
+        "
+        required
+      />
+    </div>
+    @if (createVehicleForm.get('cO2emission')?.invalid &&
+    (createVehicleForm.get('cO2emission')?.dirty ||
+    createVehicleForm.get('cO2emission')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Entrez le Co2 du véhicule.</span
+    >
+    }
+
+    <div class="form-group">
+      <label for="consumption">Consommation</label>
+      <input
+        type="number"
+        name="consumption"
+        placeholder="5.5"
+        formControlName="consumption"
+        [class.invalid]="
+          createVehicleForm.get('consumption')?.invalid &&
+          (createVehicleForm.get('consumption')?.dirty ||
+            createVehicleForm.get('consumption')?.touched ||
+            isSubmitted)
+        "
+        [class.valid]="
+          createVehicleForm.get('consumption')?.valid &&
+          (createVehicleForm.get('consumption')?.dirty ||
+            createVehicleForm.get('consumption')?.touched ||
+            isSubmitted)
+        "
+        required
+      />
+    </div>
+    @if (createVehicleForm.get('consumption')?.invalid &&
+    (createVehicleForm.get('consumption')?.dirty ||
+    createVehicleForm.get('consumption')?.touched || isSubmitted)) {
+    <span class="mt-2 text-xs font-medium text-red-600 dark:text-red-400">
+      Entrez la consommation du véhicule.</span
+    >
+    }
+
+    <p>Form Status: {{ createVehicleForm.status }}</p>
+    <button type="submit" [disabled]="!createVehicleForm.valid">Submit</button>
+  </form>
+
+  <!-- <div *ngIf="showStatusOptions" class="flex flex-col gap-2">
+    <p>Statut:</p>
+    <app-radiobuttons [(selectedValue)]="status"></app-radiobuttons>
+  </div>
+  <p *ngIf="!showStatusOptions">Statut: en service</p> -->
+  <!-- 
+
   @if (showStatusOptions) {
     <h1>Modifier un véhicule de service</h1>
     <p class="mb-6"></p>
@@ -6,84 +320,5 @@
     <h1>Ajouter un nouveau véhicule de service</h1>
     <p class="mb-6">Compléter les informations suivantes pour créer un nouveau véhicule</p>
   }
-  
-  <app-label-input 
-    label="Immatriculation" 
-    [value]="immatriculation" 
-    (valueChange)="immatriculation = $event" 
-    placeholder="AA-123-BB" 
-    type="text">
-  </app-label-input>
-
-  <app-label-input 
-    label="Marque" 
-    [value]="marque" 
-    (valueChange)="marque = $event" 
-    placeholder="Peugeot" 
-    type="text">
-  </app-label-input>
-
-  <app-label-input 
-    label="Modèle" 
-    [value]="modele" 
-    (valueChange)="modele = $event" 
-    placeholder="108" 
-    type="text">
-  </app-label-input>
-
-  <app-selector-form 
-    label="Catégorie" 
-    [options]="['SUV', 'Berline', 'Coupé', 'Hatchback', 'Cabriolet', 'Break', 'Monospace', 'Pickup', 'Van', '4x4']" 
-    placeholder="Sélectionnez la catégorie" 
-    [(value)]="categorie">
-  </app-selector-form>
-
-  <app-label-input 
-    label="Lien de la photo" 
-    [value]="lien" 
-    (valueChange)="lien = $event" 
-    placeholder="https://image.com/308" 
-    type="text">
-  </app-label-input>
-
-  <app-selector-form 
-    label="Nombre de places" 
-    [options]="['2', '3', '4', '5', '6', '7', '8']" 
-    placeholder="Sélectionnez le nombre de places" 
-    [(value)]="places">
-  </app-selector-form>
-
-  <app-selector-form 
-    label="Motorisation" 
-    [options]="['Essence', 'Diesel', 'Hybride', 'Électrique']" 
-    placeholder="Sélectionnez la motorisation" 
-    [(value)]="motorisation">
-  </app-selector-form>
-
-  <app-label-input 
-    label="CO2/km" 
-    [value]="co2" 
-    (valueChange)="co2 = $event" 
-    placeholder="95" 
-    type="text">
-  </app-label-input>
-
-  @if (showStatusOptions) {
-    <div class="flex flex-col gap-2">
-      <p>Statut:</p>
-      <app-radiobuttons [(selectedValue)]="status"></app-radiobuttons>
-    </div>
-  } @else {
-    <p>Statut: en service</p>
-  }
-
-  <section class="flex justify-evenly">
-    <app-button [bgBtn]="'bg-app-primary'" (click)="onSubmit()">
-      <span message-button>Valider</span>
-    </app-button>
-
-    <app-button [bgBtn]="'bg-app-danger'" (click)="onCancel()">
-      <span message-button>Annuler</span>
-    </app-button>
-  </section>
+    </section> -->
 </main>
