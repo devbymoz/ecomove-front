@@ -20,24 +20,24 @@ import { AuthGuard, AdminGuard } from './guards/admin.guard';
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
-  {
-    path: '',
-    component: AppComponent,
-    canActivate: [AuthGuard],
-  },
+  // {
+  //   path: '',
+  //   component: AppComponent,
+  // canActivate: [AuthGuard],
+  // },
   {
     path: 'login',
     component: LoginPageComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   {
     path: 'admin',
-    canActivate: [AdminGuard],
+    // canActivate: [AdminGuard],
     children: [
       {
         path: 'vehicle-reservations',
         component: ReservationVehicleListComponent,
-        canActivate: [AdminGuard],
+        // canActivate: [AdminGuard],
       },
       {
         path: 'details-vehicule/:id',

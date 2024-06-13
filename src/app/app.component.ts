@@ -23,6 +23,6 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    if (!this.authService.user) this.router.navigateByUrl('login');
+    // if (!this.authService.user) this.router.navigateByUrl('login');
   }
 }

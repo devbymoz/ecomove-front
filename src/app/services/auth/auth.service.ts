@@ -15,7 +15,7 @@ export class AuthService {
   login(email: string | null | undefined, password: string | null | undefined) {
     if (email == 'admin@admin.com' && password == 'admin1234') {
       this.userIsAuthenticated.next(true);
-      this.user = new User(email, 'user token', 'user');
+      this.user = new User(email, 'user token', 'admin');
       // this.user = new User(email, 'user token', 'user');
 
       // TODO : Send request to /api/login to fetch user token then store it in localstorage
