@@ -9,8 +9,3 @@ export const AdminGuard: CanActivateFn = (route, state) => {
   }
   return false;
 };
-
-export const AuthGuard: CanActivateFn = (route, state) => {
-  const authService = inject(AuthService);
-  return authService.user ? false : true;
-};

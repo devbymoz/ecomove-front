@@ -17,12 +17,10 @@ import { AuthService } from './services/auth/auth.service.js';
     CreateCarpoolComponent,
   ],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   authService = inject(AuthService);
   router = inject(Router);
-  constructor() {}
-
-  ngOnInit() {
-    // if (!this.authService.user) this.router.navigateByUrl('login');
+  constructor() {
+    if (!this.authService.user) this.router.navigateByUrl('login');
   }
 }

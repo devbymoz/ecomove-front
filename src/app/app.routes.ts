@@ -16,28 +16,28 @@ import { ErrorsPageComponent } from './pages/errors-page/errors-page.component';
 import { SearchVehicleComponent } from './pages/colab/search-vehicle/search-vehicle.component';
 import { DetailsReservationVehicleComponent } from './pages/colab/details-reservation-vehicle/details-reservation-vehicle.component';
 import { PostCarpoolingAnnouncementComponent } from './pages/colab/post-carpooling-announcement/post-carpooling-announcement.component';
-import { AuthGuard, AdminGuard } from './guards/admin.guard';
+import { AdminGuard } from './guards/admin.guard';
 import { AppComponent } from './app.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-  // {
-  //   path: '',
-  //   component: AppComponent,
-  // canActivate: [AuthGuard],
-  // },
+  {
+    path: '',
+    component: AppComponent,
+    canActivate: [AuthGuard],
+  },
   {
     path: 'login',
     component: LoginPageComponent,
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
   },
   {
     path: 'admin',
-    // canActivate: [AdminGuard],
+    canActivate: [AdminGuard],
     children: [
       {
         path: 'vehicle-reservations',
         component: ReservationVehicleListComponent,
-        // canActivate: [AdminGuard],
       },
       {
         path: 'details-vehicule/:id',

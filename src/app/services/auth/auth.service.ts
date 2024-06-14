@@ -20,7 +20,13 @@ export class AuthService {
 
       // TODO : Send request to /api/login to fetch user token then store it in localstorage
       localStorage.setItem('user', JSON.stringify({ user: this.user }));
-      this.router.navigateByUrl('home');
+
+      // Redirection
+      if (this.user.getRole() == 'admin')
+        this.router.navigateByUrl('admin/liste-de-vehicules');
+
+      if (this.user.getRole() === 'user')
+        this.router.navigateByUrl('colab/chercher-un-vehicule');
     } else {
       alert('Identifiants invalides.');
     }
