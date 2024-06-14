@@ -24,16 +24,16 @@ export const routes: Routes = [
   {
     path: '',
     component: AppComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
   {
     path: 'login',
     component: LoginPageComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
   {
     path: 'admin',
-    canActivate: [AdminGuard],
+    //canActivate: [AdminGuard],
     children: [
       {
         path: 'vehicle-reservations',

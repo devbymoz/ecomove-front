@@ -21,6 +21,6 @@ export class AppComponent {
   authService = inject(AuthService);
   router = inject(Router);
   constructor() {
-    if (!this.authService.user) this.router.navigateByUrl('login');
+    //if (!this.authService.user) this.router.navigateByUrl('login');
   }
 }
