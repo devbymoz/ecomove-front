@@ -150,10 +150,10 @@ select {
 button {
   @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
 }
-<<<<<<< HEAD .box-card {
+.box-card {
   @apply rounded-lg border border-app-border shadow-card;
 }
-=======>>>>>>>develop .base-input {
+.base-input {
   @apply shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:outline-none;
 }
 
