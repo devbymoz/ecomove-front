@@ -24,21 +24,21 @@ export const routes: Routes = [
   {
     path: '',
     component: AppComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
   {
     path: 'login',
     component: LoginPageComponent,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
   {
     path: 'admin',
-    canActivate: [AdminGuard],
+    //canActivate: [AdminGuard],
     children: [
-      {
-        path: 'vehicle-reservations',
-        component: ReservationVehicleListComponent,
-      },
+      // {
+      //   path: 'vehicle-reservations',
+      //   component: ReservationVehicleListComponent,
+      // },
       {
         path: 'details-vehicule/:id',
         component: DetailsvehicleComponent,
@@ -68,34 +68,34 @@ export const routes: Routes = [
         path: 'details-reservation-vehicule',
         component: DetailsReservationVehicleComponent,
       },
-      {
-        path: 'creer-covoiturage',
-        component: PostCarpoolingAnnouncementComponent,
-      },
-      {
-        path: 'details-reservation-carpooling',
-        component: DetailsReservationCarpoolingComponent,
-      },
-      {
-        path: 'details-carpooling',
-        component: DetailsCarpoolingComponent,
-      },
-      {
-        path: 'announcement-carpooling-organizer',
-        component: AnnouncementCarpoolingOrganizerComponent,
-      },
+      // {
+      //   path: 'creer-covoiturage',
+      //   component: PostCarpoolingAnnouncementComponent,
+      // },
+      // {
+      //   path: 'details-reservation-carpooling',
+      //   component: DetailsReservationCarpoolingComponent,
+      // },
+      // {
+      //   path: 'details-carpooling',
+      //   component: DetailsCarpoolingComponent,
+      // },
+      // {
+      //   path: 'announcement-carpooling-organizer',
+      //   component: AnnouncementCarpoolingOrganizerComponent,
+      // },
       {
         path: 'reservations-vehicules',
         component: ListReservedVehiclesComponent,
       },
-      {
-        path: 'organizer-carpool-list',
-        component: OrganizerCarpoolListComponent,
-      },
-      {
-        path: 'chercher-covoiturage',
-        component: SearchCarpoolComponent,
-      },
+      // {
+      //   path: 'organizer-carpool-list',
+      //   component: OrganizerCarpoolListComponent,
+      // },
+      // {
+      //   path: 'chercher-covoiturage',
+      //   component: SearchCarpoolComponent,
+      // },
       {
         path: 'carpool-reservation-history',
         component: CarpoolReservationHistoryComponent,
@@ -104,26 +104,26 @@ export const routes: Routes = [
         path: 'post-carpooling-announcement',
         component: PostCarpoolingAnnouncementComponent,
       },
-      {
-        path: 'details-carpooling',
-        component: DetailsCarpoolingComponent,
-      },
-      {
-        path: 'announcement-carpooling-organizer',
-        component: AnnouncementCarpoolingOrganizerComponent,
-      },
+      // {
+      //   path: 'details-carpooling',
+      //   component: DetailsCarpoolingComponent,
+      // },
+      // {
+      //   path: 'announcement-carpooling-organizer',
+      //   component: AnnouncementCarpoolingOrganizerComponent,
+      // },
       {
         path: 'list-reserved-vehicles',
         component: ListReservedVehiclesComponent,
       },
-      {
-        path: 'mes-covoiturages',
-        component: OrganizerCarpoolListComponent,
-      },
-      {
-        path: 'chercher-covoiturage',
-        component: SearchCarpoolComponent,
-      },
+      // {
+      //   path: 'mes-covoiturages',
+      //   component: OrganizerCarpoolListComponent,
+      // },
+      // {
+      //   path: 'chercher-covoiturage',
+      //   component: SearchCarpoolComponent,
+      // },
       {
         path: 'carpool-reservation-history',
         component: CarpoolReservationHistoryComponent,

@@ -18,7 +18,7 @@
     <button class="bg-app-primary">Chercher</button>
   </div>
 
-  <section class="flex flex-wrap gap-6 my-8">
+  <section class="container-card">
     @for (vehicle of vehicles; track $index) {
       <app-vehicle-list
       [vehicleId]="vehicle.vehicleId"

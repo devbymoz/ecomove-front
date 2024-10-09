@@ -6,8 +6,8 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { VehicleService } from '../../../services/vehicle.service.js';
+import { ActivatedRoute, Router } from '@angular/router';
+import { VehicleService } from '../../../services/vehicle/vehicle.service.js';
 import { CreateVehicle } from '../../../models/vehicles/create-vehicle.interface.js';
 import { BrandService } from '../../../services/brand/brand.service.js';
 import { Brands } from '../../../models/brands/brands.interface.js';
@@ -28,7 +28,8 @@ import { AlertComponent } from '../../../components/alert/alert.component.js';
 })
 export class FormVehicleComponent implements OnInit {
   title: string = 'Ajouter un nouveau véhicule de service';
-  description: string = 'Compléter les informations suivantes pour créer un nouveau véhicule';
+  description: string =
+    'Compléter les informations suivantes pour créer un nouveau véhicule';
   // Pour afficher les boutons radios de changement de status pour la page modifier
   showStatusOptions: boolean = false;
   isSubmitted = false;
@@ -45,7 +46,7 @@ export class FormVehicleComponent implements OnInit {
   models: Model[] = [];
   showModels: boolean = false;
   @ViewChild('alertModal') alertModal!: AlertComponent;
-
+  private _router: Router = inject(Router);
 
   // Validation des champs du formulaires
   createVehicleForm = this._formBuilder.group({
@@ -62,8 +63,8 @@ export class FormVehicleComponent implements OnInit {
   });
 
   constructor(private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.url.subscribe(url => {
-      if (url.some(segment => segment.path === 'modifier-vehicule')) {
+    this.activatedRoute.url.subscribe((url) => {
+      if (url.some((segment) => segment.path === 'modifier-vehicule')) {
         this.title = 'Modifier un véhicule de service';
         this.description = '';
         this.showStatusOptions = true;
@@ -72,23 +73,23 @@ export class FormVehicleComponent implements OnInit {
   }
 
   pressSubmit() {
-    this.alertModal.show("Merci de remplir tous les champs", 404)
+    this.alertModal.show('Merci de remplir tous les champs', 404);
     setTimeout(() => {
       this.alertModal.hidden();
     }, 5000);
   }
 
-
-
   selectModel() {
     this.isSubmitted = true;
     if (this.createVehicleForm.value.brand != null) {
-      this._modelService.fetchModelsByBrand(+this.createVehicleForm.value.brand).subscribe({
-        next: (models) => {
-          this.models = models;
-          this.showModels = true;
-        },
-      });
+      this._modelService
+        .fetchModelsByBrand(+this.createVehicleForm.value.brand)
+        .subscribe({
+          next: (models) => {
+            this.models = models;
+            this.showModels = true;
+          },
+        });
     }
   }
 
@@ -98,9 +99,7 @@ export class FormVehicleComponent implements OnInit {
       next: (response) => {
         this.brands = response.data;
       },
-      error: (error) => {
-
-      }
+      error: (error) => {},
     });
 
     this._categoryService.fetchCategories().subscribe({
@@ -115,7 +114,6 @@ export class FormVehicleComponent implements OnInit {
       },
     });
   }
-
 
   onSubmit() {
     if (!this.createVehicleForm.valid) {
@@ -135,6 +133,16 @@ export class FormVehicleComponent implements OnInit {
       this._serviceVehicle.fetchCreateVehicle(newVehicle).subscribe({
         next: (response) => {
           console.log(response);
+
+          this.alertModal.show('Le véhicule a bien été créé', 200);
+          setTimeout(() => {
+            this._router.navigate(['admin/liste-de-vehicules']);
+            this.createVehicleForm.reset();
+          }, 3000);
+
+          setTimeout(() => {
+            this.alertModal.hidden();
+          }, 5000);
         },
         error: (err) => {
           console.log(err);
@@ -156,15 +164,6 @@ export class FormVehicleComponent implements OnInit {
       // Logique d'ajout
     }
   }
-
-
-
-
-
-
-
-
-
 
   onCancel() {
     // Logique d'annulation

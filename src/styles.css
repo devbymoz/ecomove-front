@@ -46,12 +46,7 @@ header {
   }
 }
 
-/* Additional styles */
-a {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}
- 
+/* Additional styles */ 
 h1 {
   font-size: 32px;
   font-weight: 700;
@@ -127,10 +122,6 @@ input, select {
   @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
 }
  
-.box-card {
-  @apply rounded-lg border border-app-border shadow-card max-w-[385px];
-}
- 
 .form-group {
   @apply my-3;
 }
@@ -147,7 +138,7 @@ button {
   @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
 }
 .box-card {
-  @apply rounded-lg border border-app-border shadow-card max-w-[385px];
+  @apply rounded-lg border border-app-border shadow-card;
 }
 
 .base-input {
@@ -179,4 +170,12 @@ form {
 .valid {
   border: 2px solid green;
   background-color: #ecfccb;
+}
+
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
+  gap: 18px;
+  margin-bottom: 32px;
+  margin-top: 32px;
 }

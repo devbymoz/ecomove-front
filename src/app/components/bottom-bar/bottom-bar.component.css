@@ -14,3 +14,10 @@
     font-size: 14px;
   }
 }
+
+.bottom-bar {
+  position: fixed;
+  bottom: 0px;
+  right: 0;
+  left: 0;
+}
