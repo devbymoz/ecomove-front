@@ -16,17 +16,16 @@ export class AuthService {
     if (email == 'admin@admin.com' && password == 'admin1234') {
       this.userIsAuthenticated.next(true);
       this.user = new User(email, 'admin token', 'admin');
-      // this.user = new User(email, 'user token', 'user');
 
-      // TODO : Send request to /api/login to fetch user token then store it in localstorage
       localStorage.setItem('user', JSON.stringify({ user: this.user }));
 
-      // Redirection
-      if (this.user.getRole() == 'admin')
+      if (this.user.getRole() == 'admin') {
         this.router.navigateByUrl('admin/liste-de-vehicules');
+      }
 
-      if (this.user.getRole() === 'user')
+      if (this.user.getRole() === 'user') {
         this.router.navigateByUrl('colab/chercher-un-vehicule');
+      }
     } else {
       alert('Identifiants invalides.');
     }

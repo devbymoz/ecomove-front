@@ -16,13 +16,7 @@ import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component
     NavAdminComponent,
     FooterComponent,
     CreateCarpoolComponent,
-    BottomBarComponent
+    BottomBarComponent,
   ],
 })
-export class AppComponent {
-  authService = inject(AuthService);
-  router = inject(Router);
-  constructor() {
-    // if (!this.authService.user) this.router.navigateByUrl('login');
-  }
-}
+export class AppComponent {}
