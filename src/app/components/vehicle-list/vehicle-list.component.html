@@ -1,11 +1,7 @@
 <div class="box-card">
   <!-- {{ carId }} -->
-  <img
-    (click)="showVehicleDetails(vehicleId)"
-    class="w-full h-48 object-cover cursor-pointer rounded-t-lg"
-    src="{{ photo }}"
-    alt="Car Image Toyota"
-  />
+  <img (click)="showVehicleDetails(vehicleId)" class="w-full h-48 object-cover cursor-pointer rounded-t-lg"
+    src="{{ photo }}" alt="Car Image Toyota" />
   <div class="text-black space-y-3 p-3 flex flex-col items-center">
     <p>Immatriculation : {{ registration }}</p>
     <p>Marque : {{ brand }}</p>

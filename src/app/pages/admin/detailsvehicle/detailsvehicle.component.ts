@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { ButtonComponent } from '../../../components/buttons/button/button.component.js';
 import { NgClass } from '@angular/common';
-import { VehicleService } from '../../../services/vehicle.service.js';
+import { VehicleService } from '../../../services/vehicle/vehicle.service.js';
 import { DetailsVehicle } from '../../../models/vehicles/details-vehicle.interface.js';
 import {
   ActivatedRoute,

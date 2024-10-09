@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { VehicleService } from '../../../services/vehicle.service';
+import { VehicleService } from '../../../services/vehicle/vehicle.service';
 import { DetailsVehicle } from '../../../models/vehicles/details-vehicle.interface';
 import { ButtonComponent } from '../../../components/buttons/button/button.component';
 import { NumberPageComponent } from '../../../components/number-page/number-page.component';

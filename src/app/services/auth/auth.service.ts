@@ -15,7 +15,8 @@ export class AuthService {
   login(email: string | null | undefined, password: string | null | undefined) {
     if (email == 'admin@admin.com' && password == 'admin1234') {
       this.userIsAuthenticated.next(true);
-      this.user = new User(email, 'admin token', 'user');
+      this.user = new User(email, 'admin token', 'admin');
+
       localStorage.setItem('user', JSON.stringify({ user: this.user }));
 
       if (this.user.getRole() == 'admin') {

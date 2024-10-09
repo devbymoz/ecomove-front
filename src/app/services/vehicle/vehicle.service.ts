@@ -1,9 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable} from 'rxjs';
-import { environment } from '../../environments/environment.development.js';
-import { Response } from '../models/response.interface.js';
-import { CreateVehicle } from '../models/vehicles/create-vehicle.interface.js';
+import { environment } from '../../../environments/environment.development.js';
+import { Response } from '../../models/response.interface.js';
+import { CreateVehicle } from '../../models/vehicles/create-vehicle.interface.js';
 
 @Injectable({
   providedIn: 'root'

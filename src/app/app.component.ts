@@ -4,6 +4,7 @@ import { FooterComponent } from './components/footer/footer.component.js';
 import { NavAdminComponent } from './components/navs/nav.component.js';
 import { CreateCarpoolComponent } from './pages/create-carpool/create-carpool.component';
 import { AuthService } from './services/auth/auth.service.js';
+import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component.js';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import { AuthService } from './services/auth/auth.service.js';
     NavAdminComponent,
     FooterComponent,
     CreateCarpoolComponent,
+    BottomBarComponent,
   ],
 })
 export class AppComponent {}

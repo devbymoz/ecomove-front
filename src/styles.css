@@ -4,7 +4,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 :root {
   --primary-color: #007e33;
   --secondary-color: #01579b;
@@ -17,13 +17,13 @@
   --text-light-color: #9b9b9b;
   --primary-font: "Poppins", sans-serif !important;
 }
- 
+
 body {
   font-family: var(--primary-font);
   color: var(--text-color);
   font-size: 16px;
 }
- 
+
 main {
   padding: 38px 16px;
   margin-top: 70px;
@@ -47,55 +47,51 @@ header {
 }
 
 /* Additional styles */
-a {
-  color: var(--secondary-color);
-  text-decoration: underline;
-}
- 
 h1 {
   font-size: 32px;
   font-weight: 700;
 }
- 
+
 h2 {
   font-size: 24px;
   font-weight: 600;
 }
- 
+
 h3 {
   font-size: 22px;
   font-weight: 400;
 }
- 
+
 .logo {
   height: 41px;
 }
- 
+
 .shadow-card {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.25);
 }
- 
+
 .container {
   max-width: 1000px;
   margin: 0 auto;
 }
- 
+
 .btn {
   padding: 0.5rem 1rem;
   border: 1px solid #ccc;
   cursor: pointer;
 }
- 
+
 .btn-outline {
   border: 1px solid #ccc;
   background-color: transparent;
 }
- 
+
 .btn-outline:hover {
   background-color: #eee;
 }
 
-input, select {
+input,
+select {
   border: 1px solid var(--border-color);
   padding: 9px;
   border-radius: 8px;
@@ -114,31 +110,31 @@ input, select {
 .pagination-item {
   @apply flex items-center justify-center border border-gray-300 h-8 w-8 rounded-lg cursor-pointer transition-transform transform;
 }
- 
+
 .pagination-item:hover {
   @apply bg-gray-100;
 }
- 
+
 .pagination-item.active {
   @apply bg-app-secondary text-white scale-125;
 }
- 
+
 .display-flex-center {
   @apply flex justify-center items-center;
 }
- 
+
 .display-flex-between {
   @apply flex justify-between items-center;
 }
- 
+
 .btn-primary {
   @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
 }
- 
+
 .box-card {
   @apply rounded-lg border border-app-border shadow-card;
 }
- 
+
 .form-group {
   @apply my-3;
 }
@@ -146,7 +142,7 @@ input, select {
 .display-flex-center {
   @apply flex justify-center items-center;
 }
- 
+
 .display-flex-between {
   @apply flex justify-between items-center;
 }
@@ -154,26 +150,28 @@ input, select {
 button {
   @apply px-4 py-2 shadow-lg text-white rounded-lg hover:opacity-90;
 }
-
+.box-card {
+  @apply rounded-lg border border-app-border shadow-card;
+}
 .base-input {
   @apply shadow appearance-none border rounded w-full p-3 text-gray-700 leading-tight focus:outline-none;
 }
 
 /* Faut changer le nom de ce style pour ne pas modifier l'apparence des autre inputs */
 input {
-  @apply shadow appearance-none border rounded w-full py-2 px-3 mt-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-100
+  @apply shadow appearance-none border rounded w-full py-2 px-3 mt-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:bg-blue-100;
 }
 
 select {
-  @apply mt-1 block shadow w-full pl-3 pr-10 py-2 border border-app-border focus:outline-none focus:ring-app-secondary focus:border-app-secondary rounded-md
+  @apply mt-1 block shadow w-full pl-3 pr-10 py-2 border border-app-border focus:outline-none focus:ring-app-secondary focus:border-app-secondary rounded-md;
 }
 
 form {
-  @apply flex flex-col 
+  @apply flex flex-col;
 }
 
 .registration-plate {
-  border-left: 15px solid #2c3fa0; 
+  border-left: 15px solid #2c3fa0;
 }
 
 .invalid {
@@ -184,4 +182,12 @@ form {
 .valid {
   border: 2px solid green;
   background-color: #ecfccb;
+}
+
+.container-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
+  gap: 18px;
+  margin-bottom: 32px;
+  margin-top: 32px;
 }
