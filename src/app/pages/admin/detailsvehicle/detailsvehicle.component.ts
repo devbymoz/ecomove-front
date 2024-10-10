@@ -53,7 +53,7 @@ export class DetailsvehicleComponent implements OnInit, OnDestroy {
           this.responseValid = false;
           setTimeout(() => {
             this.router.navigate(['admin/liste-de-vehicules']);
-          }, 5000);
+          }, 1000);
           // console.log('Message : ', err.error.message);
           // console.log('Code :', err.error.codeStatus);
         },
@@ -82,13 +82,14 @@ export class DetailsvehicleComponent implements OnInit, OnDestroy {
         .fetchRemoveVehicle(id)
         .subscribe({
           next: (data) => {
-            this.alertModal.show(
-              'Le véhicule a bien été supprimé, vous allez être redirigé vers la liste des véhicules',
-              200
-            );
             setTimeout(() => {
               this.router.navigate(['admin/liste-de-vehicules']);
-            }, 5000);
+              console.log('APres redirection');
+            }, 2500);
+            // this.alertModal.show(
+            //   'Le véhicule a bien été supprimé, vous allez être redirigé vers la liste des véhicules',
+            //   200
+            // );
           },
           error: (err) => {
             this.alertModal.show(err.error.message, err.error.codeStatus);
