@@ -9,10 +9,12 @@ import { OrganizerCarpoolListComponent } from '../pages/colab/organizer-carpool-
 import { PostCarpoolingAnnouncementComponent } from '../pages/colab/post-carpooling-announcement/post-carpooling-announcement.component';
 import { SearchCarpoolComponent } from '../pages/colab/search-carpool/search-carpool.component';
 import { SearchVehicleComponent } from '../pages/colab/search-vehicle/search-vehicle.component';
+import { loggedInGuard } from '../guards/logged-in/logged-in.guard.js';
 
 export const colabRoutes: Routes = [
   {
     path: 'colab',
+    canActivate: [loggedInGuard],
     children: [
       {
         path: 'chercher-un-vehicule',

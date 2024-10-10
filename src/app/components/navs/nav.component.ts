@@ -4,6 +4,8 @@ import { ButtonComponent } from '../buttons/button/button.component.js';
 import { AsyncPipe, NgClass } from '@angular/common';
 import { AuthService } from '../../services/auth/auth.service.js';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { JWTService } from '../../services/auth/jwt.service.js';
+import { RoleService } from '../../services/auth/role.service.js';
 
 @Component({
   selector: 'app-nav',
@@ -21,20 +23,16 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 export class NavAdminComponent {
   authService = inject(AuthService);
   router = inject(Router);
-  userIsLoggedIn: boolean | null = true;
-
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.authService.userIsAuthenticated.subscribe((authenticated) => {
-      this.userIsLoggedIn = authenticated;
-    });
-  }
+  jwtService = inject(JWTService);
+  roleService = inject(RoleService);
 
   logout() {
-    this.authService.logout();
-  }
-
-  redirectToLogin() {
-    this.router.navigateByUrl('login');
+    this.authService.logout().subscribe({
+      next: (response) => {
+        this.jwtService.removeTokenInStorage();
+        this.router.navigateByUrl('/login');
+      },
+    });
   }
 
   searchVehicle() {

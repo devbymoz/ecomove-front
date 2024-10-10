@@ -4,31 +4,15 @@
   <section class="border-b pb-6">
     <div>
       <label for="marque">Marque</label>
-      <input
-        type="text"
-        id="marque"
-        name="marque"
-        [(ngModel)]="marque"
-        placeholder="Marque"
-      />
+      <input type="text" id="marque" name="marque" [(ngModel)]="marque" placeholder="Marque" />
     </div>
     <div>
       <label for="modele">Modèle</label>
-      <input
-        type="text"
-        id="modele"
-        name="modele"
-        [(ngModel)]="modele"
-        placeholder="Modèle"
-      />
+      <input type="text" id="modele" name="modele" [(ngModel)]="modele" placeholder="Modèle" />
     </div>
     <div>
       <label for="nombreDePlaces">Nombre de places</label>
-      <select
-        id="nombreDePlaces"
-        name="nombreDePlaces"
-        [(ngModel)]="nombreDePlaces"
-      >
+      <select id="nombreDePlaces" name="nombreDePlaces" [(ngModel)]="nombreDePlaces">
         <option value="2">2</option>
         <option value="4">4</option>
         <option value="5">5</option>
@@ -36,26 +20,19 @@
     </div>
     <div>
       <label for="motorisation">Motorisation</label>
-      <select
-        id="motorisation"
-        name="motorisation"
-        [(ngModel)]="motorisation"
-      >
+      <select id="motorisation" name="motorisation" [(ngModel)]="motorisation">
         <option value="Hybride">Hybride</option>
         <option value="Essence">Essence</option>
         <option value="Diesel">Diesel</option>
       </select>
-    </div>    
+    </div>
     <app-calendar class=""></app-calendar>
-    <button>Chercher</button>
+    <button class="bg-app-primary">Chercher</button>
   </section>
   <section class="flex flex-col gap-6">
     <div class="flex justify-between">
       <p>154 voitures</p>
-      <app-selector-form
-        [options]="[]"
-        placeholder="trier par"
-      ></app-selector-form>
+      <app-selector-form [options]="[]" placeholder="trier par"></app-selector-form>
     </div>
     <div class="flex flex-wrap justify-center gap-6">
       <app-car-card></app-car-card>
@@ -71,6 +48,6 @@
       <app-car-card></app-car-card>
       <app-car-card></app-car-card>
     </div>
-    <app-number-page></app-number-page>
+    <!-- <app-number-page></app-number-page> -->
   </section>
 </section>
