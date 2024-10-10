@@ -1,8 +1,20 @@
-section {
-  background-image: url("/assets/background-images/login-bg-image.svg");
-  /* background-attachment: fixed; */
-  background-size: contain;
+
+@media (min-width: 1024px) {
+  section {
+    background-image: url("/assets/background-images/login-bg-image.svg");
+    background-size: cover;
+
+  }
 }
+
+/* Pour les écrans de taille mobile (par exemple, < 1024px) */
+@media (max-width: 1023px) {
+  section {
+    background-image: none;
+  }
+}
+
+
 
 .invalid {
   border: 2px solid red;
