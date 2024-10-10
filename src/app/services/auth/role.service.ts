@@ -21,11 +21,8 @@ export class RoleService {
     if (!token) return [];
 
     const decodedToken: any = jwtDecode(token);
-    const role =
-      decodedToken[
-        'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
-      ];
-    return role || [];
+    const roles = decodedToken.role;
+    return roles || [];
   }
 
   // Vérifie si l'utilisateur a le rôle requis.
