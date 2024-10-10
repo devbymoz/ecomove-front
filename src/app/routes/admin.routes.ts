@@ -3,10 +3,12 @@ import { ReservationVehicleListComponent } from '../pages/admin/reservation-vehi
 import { DetailsvehicleComponent } from '../pages/admin/detailsvehicle/detailsvehicle.component';
 import { FormVehicleComponent } from '../pages/admin/form-vehicle/form-vehicle.component';
 import { ViewVehicleListComponent } from '../pages/admin/view-vehicle-list/view-vehicle-list.component';
+import { loggedInGuard } from '../guards/logged-in/logged-in.guard.js';
 
 export const adminRoutes: Routes = [
   {
     path: 'admin',
+    canActivate: [loggedInGuard],
     children: [
       {
         path: 'vehicle-reservations',

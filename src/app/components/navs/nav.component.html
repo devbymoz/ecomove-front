@@ -1,114 +1,55 @@
 <app-header-base>
   <ng-content nav-by-role>
-    @if (userIsLoggedIn && authService.user?.getRole() === 'admin') {
+    @if (roleService.isAdminSignal() && jwtService.isLoginSignal()) {
     <ul class="flex gap-x-4">
       <li>
-        <a
-          class="no-underline hover:underline"
-          routerLink="admin/vehicle-reservations"
-          >Réservations de véhicules</a
-        >
+        <a class="no-underline hover:underline" routerLink="admin/vehicle-reservations">Réservations de véhicules</a>
       </li>
       <li>
-        <a
-          class="no-underline hover:underline"
-          routerLink="admin/liste-de-vehicules"
-          >Liste de véhicules</a
-        >
+        <a class="no-underline hover:underline" routerLink="admin/liste-de-vehicules">Liste de véhicules</a>
       </li>
     </ul>
 
-    <button
-      class="bg-app-primary flex justify-center items-center"
-      (click)="headToAddVehicle()"
-    >
-      <svg
-        class="mr-2"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 48 48"
-      >
-        <g
-          fill="none"
-          stroke="currentColor"
-          stroke-linejoin="round"
-          stroke-width="4"
-        >
+    <button class="bg-app-primary flex justify-center items-center" (click)="headToAddVehicle()">
+      <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 48 48">
+        <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="4">
           <rect width="36" height="36" x="6" y="6" rx="3" />
           <path stroke-linecap="round" d="M24 16v16m-8-8h16" />
         </g>
       </svg>
       Ajouter un véhicule
     </button>
-    } @else if (userIsLoggedIn && authService.user?.getRole() === 'user') {
+    } @else if (jwtService.isLoginSignal()) {
     <ul class="flex gap-x-4">
+      <!-- <li>
+        <a class="no-underline hover:underline" routerLink="colab/mes-covoiturages">Mes covoiturages</a>
+      </li> -->
+      <!-- <li>
+        <a class="no-underline hover:underline" routerLink="colab/creer-covoiturage">Créer un covoiturage</a>
+      </li> -->
       <li>
-        <a
-          class="no-underline hover:underline"
-          routerLink="colab/mes-covoiturages"
-          >Mes covoiturages</a
-        >
-      </li>
-      <li>
-        <a
-          class="no-underline hover:underline"
-          routerLink="colab/creer-covoiturage"
-          >Créer un covoiturage</a
-        >
-      </li>
-      <li>
-        <a
-          class="no-underline hover:underline"
-          routerLink="colab/reservations-vehicules"
-          >Mes réservations</a
-        >
+        <a class="no-underline hover:underline" routerLink="colab/reservations-vehicules">Mes réservations</a>
       </li>
     </ul>
 
-    <button
-      class="bg-app-secondary flex justify-center items-center"
-      (click)="searchCarpool()"
-    >
-      <svg
-        class="mr-2"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="currentColor"
-          d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14"
-        />
+    <!-- <button class="bg-app-secondary flex justify-center items-center" (click)="searchCarpool()">
+      <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
       </svg>
       Covoiturage
-    </button>
+    </button> -->
 
-    <button
-      class="bg-app-primary flex justify-center items-center"
-      (click)="searchVehicle()"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24px"
-        height="24px"
-        viewBox="0 0 24 24"
-      >
-        <path
-          fill="currentColor"
-          d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14"
-        />
+    <button class="bg-app-primary flex justify-center items-center" (click)="searchVehicle()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
+        <path fill="currentColor"
+          d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14" />
       </svg>
       Véhicule
     </button>
 
-    } @if(userIsLoggedIn) {
+    } @if(jwtService.isLoginSignal()) {
     <button (click)="logout()" class="bg-app-danger">Se déconnecter</button>
-    } @else {
-    <button (click)="redirectToLogin()" class="bg-app-primary">
-      Se connecter
-    </button>
     }
   </ng-content>
 </app-header-base>

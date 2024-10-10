@@ -5,6 +5,7 @@ import { NavAdminComponent } from './components/navs/nav.component.js';
 import { CreateCarpoolComponent } from './pages/create-carpool/create-carpool.component';
 import { AuthService } from './services/auth/auth.service.js';
 import { BottomBarComponent } from './components/bottom-bar/bottom-bar.component.js';
+import { AlertComponent } from './components/alert/alert.component.js';
 
 @Component({
   selector: 'app-root',
