@@ -101,7 +101,7 @@ select {
 
 .container-card {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(355px, 355px));
   gap: 18px;
   margin-bottom: 32px;
   margin-top: 32px;
@@ -182,12 +182,4 @@ form {
 .valid {
   border: 2px solid green;
   background-color: #ecfccb;
-}
-
-.container-card {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(385px, 1fr));
-  gap: 18px;
-  margin-bottom: 32px;
-  margin-top: 32px;
 }
