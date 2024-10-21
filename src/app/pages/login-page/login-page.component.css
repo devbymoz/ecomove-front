@@ -1,20 +1,9 @@
-
-@media (min-width: 1024px) {
-  section {
-    background-image: url("/assets/background-images/login-bg-image.svg");
-    background-size: cover;
-
-  }
+section {
+  background-image: url("/assets/background-images/login-bg-image.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
 }
-
-/* Pour les écrans de taille mobile (par exemple, < 1024px) */
-@media (max-width: 1023px) {
-  section {
-    background-image: none;
-  }
-}
-
-
 
 .invalid {
   border: 2px solid red;
@@ -24,4 +13,8 @@
 .valid {
   border: 2px solid green;
   background-color: #ecfccb;
+}
+
+section {
+  padding: 32px 0px 215px;
 }
